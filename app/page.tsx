@@ -5,48 +5,167 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { ArrowRight, Clock, CheckCircle, Shield, AlertTriangle, Award, Heart, TrendingUp, Activity } from "lucide-react"
+import { ArrowRight, Clock, CheckCircle, Shield, AlertTriangle, Award, Heart, TrendingUp, Activity, Zap } from "lucide-react"
 import Image from "next/image"
 
-// ============================================
-// 🖼️ CONFIGURAÇÃO DE IMAGENS - JOINT RESET
-// ============================================
 const IMAGES = {
-  // HERO - Imagem principal do artigo
-  sandraMillerGrandCanyon: "https://i.ibb.co/x8H0047y/5c4fa786e4bf6b95eae2720de5a6f7-1764217967139.png",
-
-  // Seção: Ex-especialista de Harvard
-  harvardOrtopedista: "https://i.ibb.co/PGvKFDM3/7028b3efd3bc7cae736f2bead2d857-1764218051919.jpg",
-
-  // Seção: O peixe-zebra
-  peixeZebraRegeneracao: "https://i.ibb.co/v2PrSm9/1cfb8ad7a3e4dae6f664e94f2e533d-1764218053701.jpg",
-
-  // Seção: Citocinas destroem cartilagem
-  citocinasAtaqueCartilagem: "https://i.ibb.co/MkQZ8Z1R/94ee6615abe3b5144ee00558e3764e-1764218058684.png",
-
-  // Seção: Estudo Duke University
-  dukeUniversityEstudo: "https://i.ibb.co/v4DhG8Jr/75ec9d11fde58bba5436049d0b807a-1764218063334.jpg",
-
-  // Seção: Articulação saudável
-  articulacaoSaudavel: "https://i.ibb.co/CpswnrYz/unnamed.png",
-
-  // Seção: Método Joint Reset
-  metodoJointReset: "https://i.ibb.co/Jwm1FtHw/unnamed-1.png",
-
-  // Autoridade médica/Harvard
-  especialistaHarvard: "https://i.ibb.co/k2XRy3S3/Generatedimage-1764255762791.png",
-
-  // NOVAS IMAGENS
-  mobilidadeRecuperada: "https://i.ibb.co/x8H0047y/5c4fa786e4bf6b95eae2720de5a6f7-1764217967139.png",
-  consequenciasCitocinas: "https://i.ibb.co/v2PrSm9/1cfb8ad7a3e4dae6f664e94f2e533d-1764218053701.jpg",
-  garantiaSatisfacao: "https://i.ibb.co/k2XRy3S3/Generatedimage-1764255762791.png",
-  ativarRegeneracao: "https://i.ibb.co/CpswnrYz/unnamed.png",
+  mulherAtiva50Anos: "https://i.ibb.co/x8H0047y/5c4fa786e4bf6b95eae2720de5a6f7-1764217967139.png",
+  elonMuskFoto: "https://i.ibb.co/PGvKFDM3/7028b3efd3bc7cae736f2bead2d857-1764218051919.jpg",
+  ataqueCelulasZumbisDentro: "https://i.ibb.co/v2PrSm9/1cfb8ad7a3e4dae6f664e94f2e533d-1764218053701.jpg",
+  celulasSenescentes: "https://i.ibb.co/MkQZ8Z1R/94ee6615abe3b5144ee00558e3764e-1764218058684.png",
+  pesquisaNasaDensidadeOssea: "https://i.ibb.co/v4DhG8Jr/75ec9d11fde58bba5436049d0b807a-1764218063334.jpg",
+  raioXOssoSaudavel: "https://i.ibb.co/CpswnrYz/unnamed.png",
+  protocoloAntiCelulasZumbis: "https://i.ibb.co/Jwm1FtHw/unnamed-1.png",
+  draMarina: "https://i.ibb.co/k2XRy3S3/Generatedimage-1764255762791.png",
+  esperancaRenovada: "https://i.ibb.co/x8H0047y/5c4fa786e4bf6b95eae2720de5a6f7-1764217967139.png",
+  consequenciasInacao: "https://i.ibb.co/v2PrSm9/1cfb8ad7a3e4dae6f664e94f2e533d-1764218053701.jpg",
+  garantiaSeguranca: "https://i.ibb.co/k2XRy3S3/Generatedimage-1764255762791.png",
+  agiAgora: "https://i.ibb.co/CpswnrYz/unnamed.png",
 }
 
-const CHECKOUT_URL = "https://[INSIRA-SEU-LINK-DE-CHECKOUT-AQUI]"
+const CHECKOUT_URL = "https://pay.hotmart.com/P103120932I?off=r5yaffdw"
 
-export default function JointReset() {
+// ============================================
+// 8 TÉCNICAS - DADOS ESTRUTURADOS
+// ============================================
+const TECNICAS = [
+  {
+    numero: 1,
+    icone: "🎯",
+    titulo: "Rotina de 7 Minutos Anti-Citocinas",
+    problema: "Células zumbis liberam citocinas inflamatórias (IL-1β, TNF-α, IL-6) que corroem sua estrutura óssea 24/7",
+    funcionamento: "Você segue uma sequência específica de movimentos que ativa genes de defesa natural. Seu corpo reconhece as células zumbis como invasoras e as marca para eliminação. As citocinas destrutivas simplesmente param de ser produzidas.",
+    tempo: "7 minutos",
+    quando: "Primeira coisa ao acordar",
+    resultado: "Semana 1: Menos inflamação sistêmica • Melhor sono",
+    cor: "bg-red-50",
+    corBorda: "border-red-600",
+  },
+  {
+    numero: 2,
+    icone: "💧",
+    titulo: "Sequência de Mobilidade Articular",
+    problema: "Células zumbis se acumulam no fluido articular, tornando as articulações cada vez mais secas, rígidas e doloridas",
+    funcionamento: "Você executa movimentos de deslizamento que literalmente expulsam essas células mortas do fluido. Simultaneamente, estimula a produção de líquido sinovial fresco — o 'óleo' natural das articulações.",
+    tempo: "3-4 minutos",
+    quando: "Manhã e noite",
+    resultado: "Semana 1: Menos rigidez matinal • Semana 2: Articulações mais fluidas",
+    cor: "bg-blue-50",
+    corBorda: "border-blue-600",
+  },
+  {
+    numero: 3,
+    icone: "🧠",
+    titulo: "Neurossomática Anti-Dor",
+    problema: "Células zumbis ao redor dos nervos enviam sinais de dor crônica 24 horas por dia para seu cérebro",
+    funcionamento: "Esta técnica desativa o sinal de alerta do nervo. Você toca em pontos específicos que interrompem a cascata de inflamação neural. Sem inflamação = sem sinal de dor.",
+    tempo: "2 minutos",
+    quando: "Quando sentir dor",
+    resultado: "Imediato: Redução de 30-50% de dor",
+    cor: "bg-purple-50",
+    corBorda: "border-purple-600",
+  },
+  {
+    numero: 4,
+    icone: "🍎",
+    titulo: "Protocolo Alimentar Anti-Citocina",
+    problema: "Células zumbis se alimentam de açúcares e gorduras inflamatórias. Enquanto você come isso, alimenta literalmente seus inimigos celulares",
+    funcionamento: "O protocolo alimentar contém 3 alimentos-chave que cortam a nutrição das células zumbis, alimentam células osteoblásticas (construtoras de osso) e bloqueiam a produção de citocinas. Você não elimina comidas — apenas as combina de forma inteligente.",
+    tempo: "0 minutos (você come mesmo)",
+    quando: "Todos os dias (3 refeições)",
+    resultado: "Semana 1-2: Mais energia • Semana 3: Recuperação muscular notável",
+    cor: "bg-green-50",
+    corBorda: "border-green-600",
+  },
+  {
+    numero: 5,
+    icone: "✨",
+    titulo: "Ritual de Ativação Regenerativa",
+    problema: "Sem estimulação específica, seu corpo não consegue ativar as células-tronco dormentes que constroem osso novo",
+    funcionamento: "Este ritual de 3 minutos ativa genes de longevidade (telomerase) e força células zumbis à morte programada (apoptose). É como dar ao seu corpo a 'senha' para regenerar.",
+    tempo: "3 minutos",
+    quando: "À noite antes de dormir",
+    resultado: "Semana 1: Melhor sono • Semana 2: Recuperação durante a noite",
+    cor: "bg-yellow-50",
+    corBorda: "border-yellow-600",
+  },
+  {
+    numero: 6,
+    icone: "💧",
+    titulo: "Reidratação de Cartilagem",
+    problema: "Cartilagem deshidratada fica frágil. Células zumbis corroem a estrutura deixando-a ainda mais seca e quebradiça",
+    funcionamento: "Esta sequência de 2 minutos combina movimento com respiração específica. Aumenta a pressão intersticial, forçando água a penetrar na cartilagem. Você literalmente 'relubrifica' de dentro para fora.",
+    tempo: "2 minutos",
+    quando: "Manhã (após técnica 1)",
+    resultado: "Semana 2: Menos crepitação (estalos) • Semana 3: Movimento mais suave",
+    cor: "bg-cyan-50",
+    corBorda: "border-cyan-600",
+  },
+  {
+    numero: 7,
+    icone: "🔗",
+    titulo: "Deslizamento Vertebral",
+    problema: "Vértebras comprimidas destroem discos intervertebrais. Células zumbis se alojam lá, piorando a compressão e a dor",
+    funcionamento: "Sequência de 3 movimentos que descomprimem suavemente cada vértebra. Remove células zumbis dos discos. Restaura altura natural da coluna e reduz pressão nos nervos.",
+    tempo: "3 minutos",
+    quando: "Noite (antes da técnica 5)",
+    resultado: "Semana 1: Menos dor nas costas • Semana 2: Melhor postura",
+    cor: "bg-indigo-50",
+    corBorda: "border-indigo-600",
+  },
+  {
+    numero: 8,
+    icone: "🗺️",
+    titulo: "Mapa Completo de Reset Articular",
+    problema: "Sem uma 'varredura' completa do sistema, algumas células zumbis conseguem escapar e continuar sabotando silenciosamente",
+    funcionamento: "Este é o 'mapa guia' completo que coordena todas as 7 técnicas anteriores em uma sequência otimizada. Você aprende exatamente qual técnica ativar em qual momento para máxima eliminação de células zumbis.",
+    tempo: "Integrado nas outras (não adiciona tempo)",
+    quando: "Sua 'rotina padrão' para o dia",
+    resultado: "Semana 4: Regeneração acelerada • Semana 8: Densidade óssea visível",
+    cor: "bg-pink-50",
+    corBorda: "border-pink-600",
+  },
+]
+
+// ============================================
+// CRONOLOGIA
+// ============================================
+const CRONOLOGIA = [
+  {
+    semana: "Semana 1-2",
+    fase: "FASE DE BLOQUEIO",
+    tecnicas: "Técnicas 1, 3, 4 ativadas",
+    biologico: "Citocinas destrutivas reduzem em 40-60%",
+    sensacao: "Menos rigidez, melhor sono, menos dor",
+    status: "CÉLULAS ZUMBIS ATACADAS",
+    cor: "bg-red-100",
+    corBorda: "border-red-400",
+  },
+  {
+    semana: "Semana 3-4",
+    fase: "FASE DE LIMPEZA",
+    tecnicas: "Técnicas 2, 5, 6 adicionadas",
+    biologico: "Células zumbis sendo eliminadas sistemicamente",
+    sensacao: "Movimento mais fluido, menos inflamação",
+    status: "CÉLULAS ZUMBIS ELIMINADAS",
+    cor: "bg-yellow-100",
+    corBorda: "border-yellow-400",
+  },
+  {
+    semana: "Semana 5-8",
+    fase: "FASE DE REGENERAÇÃO",
+    tecnicas: "Técnicas 7, 8 completas",
+    biologico: "Corpo foca 100% em CONSTRUIR osso novo",
+    sensacao: "Força, confiança, independência",
+    status: "CÉLULAS ZUMBIS ERRADICADAS",
+    cor: "bg-green-100",
+    corBorda: "border-green-400",
+  },
+]
+
+export default function ProtocoloAntiCelulasZumbis() {
   const [timeLeft, setTimeLeft] = useState({ hours: 23, minutes: 47, seconds: 32 })
+  const [vagas, setVagas] = useState(47)
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -73,25 +192,30 @@ export default function JointReset() {
     <main className="min-h-screen bg-white overflow-x-hidden">
       <article className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-12">
         
+        {/* ============================================
+            SEÇÃO 1: BADGE E HEADLINES
+            ============================================ */}
         <div className="mb-4 sm:mb-6">
-          <Badge className="bg-blue-600 text-white px-3 sm:px-4 py-1 text-xs font-bold uppercase">
-            Saúde • Regeneração Articular
+          <Badge className="bg-red-600 text-white px-3 sm:px-4 py-1 text-xs font-bold uppercase">
+            Saúde • Investigação Científica
           </Badge>
         </div>
 
+        {/* MUDANÇA 1: HEADLINE OTIMIZADO */}
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6 break-words" style={{ fontFamily: 'Georgia, serif' }}>
-          A Descoberta do Joint Reset: Como Reativar a Capacidade Natural de Regeneração das Articulações aos 50+
+          Elon Musk Revela: As 8 Técnicas Que Eliminam Células Zumbis em 7 Minutos por Dia e Regeneram Densidade Óssea Naturalmente
         </h1>
 
         <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed mb-6 sm:mb-8 break-words" style={{ fontFamily: 'Georgia, serif' }}>
-          Um ex-especialista ortopédico de Harvard revela como desativar as citocinas que destroem suas articulações — e reativar o mesmo mecanismo que os peixes-zebra usam para regenerar tecidos
+          Protocolo de 8 técnicas específicas (7 minutos) que elimina células zumbis e reconstrói ossos em 60 dias
         </p>
 
+        {/* HERO IMAGE */}
         <figure className="mb-6 sm:mb-10 w-full">
           <div className="relative w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] rounded-lg overflow-hidden bg-gray-200">
             <Image 
-              src={IMAGES.sandraMillerGrandCanyon}
-              alt="Sandra Miller no topo do Grand Canyon"
+              src={IMAGES.mulherAtiva50Anos}
+              alt="Mulher ativa com mais de 50 anos recuperando mobilidade"
               fill
               className="object-contain sm:object-cover"
               priority
@@ -100,63 +224,66 @@ export default function JointReset() {
             />
           </div>
           <figcaption className="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-3 italic px-2 sm:px-0">
-            Sandra Miller, 72 anos, escalando o North Rim do Grand Canyon — um ano após os médicos dizerem que precisaria de cirurgia no joelho.
+            Milhões de mulheres acima de 50 anos sofrem com perda óssea acelerada — mas nova descoberta pode reverter o processo. Foto: Divulgação
           </figcaption>
         </figure>
 
         <div className="text-base sm:text-lg leading-relaxed text-gray-800 mb-6 sm:mb-8 break-words" style={{ fontFamily: 'Georgia, serif' }}>
           <p className="mb-4 sm:mb-6">
-            <span className="font-bold text-xl sm:text-2xl float-left mr-2 leading-none">H</span>á não muito tempo, uma mulher de 72 anos chamada Sandra Miller alcançou o topo da North Rim no Grand Canyon e surpreendeu toda a sua família.
+            <span className="font-bold text-xl sm:text-2xl float-left mr-2 leading-none">O</span>s primeiros sinais de deterioração óssea e articular são fáceis de passar despercebidos. Com muita frequência, os médicos ignoram os sinais de alerta, com consequências devastadoras; <strong>todos os meses, cerca de 1.100 pessoas morrem após fraturarem o quadril devido à baixa densidade óssea.</strong>
           </p>
         </div>
 
         <div className="article-body text-base sm:text-lg leading-relaxed text-gray-800 space-y-4 sm:space-y-6 break-words" style={{ fontFamily: 'Georgia, serif' }}>
           
-          <div className="bg-gray-50 border-l-4 border-blue-600 pl-4 sm:pl-6 py-4 sm:py-6 my-6 sm:my-8 rounded-r-lg">
+          <div className="bg-gray-50 border-l-4 border-red-600 pl-4 sm:pl-6 py-4 sm:py-6 my-6 sm:my-8 rounded-r-lg">
             <p className="mb-3 sm:mb-4">
-              Lá em cima, ela disse: "Meus joelhos e meus quadris sentem-se hoje mais fortes do que aos trinta."
+              Na verdade, assisti horrorizada enquanto minha mãe morria lentamente de osteoporose.
             </p>
             <p className="mb-3 sm:mb-4">
-              A maioria das pessoas simplesmente sorriria, diria "Deus a abençoe" e seguiria adiante.
+              Ver alguém que você ama morrer lentamente, em agonia, sem saber nada sobre a doença que o matou, é de partir o coração.
+            </p>
+            <p className="mb-3 sm:mb-4">
+              <strong>A pior parte?</strong> Três médicos diferentes nos disseram que era apenas "envelhecimento normal". Que mulheres da idade dela deveriam esperar "diminuir o ritmo".
             </p>
             <p className="font-bold">
-              Mas como ex-especialista ortopédico de Harvard e consultor assistente do time Boston Celtics, levei as palavras de Sandra muito a sério — e você também deveria.
+              Mas não foi o envelhecimento normal que levou minha mãe...
             </p>
           </div>
 
           <p>
-            Porque Sandra nem sempre foi ativa.
+            Porque uma nova pesquisa inovadora sugere que essa crença pode estar <strong>perigosamente errada.</strong>
           </p>
 
           <p>
-            <strong>Um ano antes dessa caminhada, os médicos disseram a ela que provavelmente precisaria de uma cirurgia no joelho.</strong>
-          </p>
-
-          <p>
-            Até mesmo caminhar pela casa doía. Subir escadas parecia impossível.
-          </p>
-
-          <p className="font-bold text-lg sm:text-xl">
-            Mas hoje Sandra escala montanhas, caminha diariamente com amigas e brinca sem dor com seus netos.
+            Na verdade, estudos clínicos mostram agora que milhões de mulheres com mais de 50 anos estão sofrendo perda óssea e de cartilagem acelerada, não simplesmente por causa do envelhecimento, mas devido a uma <strong>invasão celular oculta</strong> que silenciosamente sabota seus ossos e articulações por dentro.
           </p>
 
           <blockquote className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 text-center py-6 sm:py-8 my-6 sm:my-8 border-y-2 border-gray-300 px-4 break-words">
-            "Como ela passou de dores articulares para alpinismo sem esforço? E aos 72 anos — como isso é possível?"
+            "Então, por que algumas mulheres permanecem fortes, ativas e sem dor até os 70 anos, enquanto outras começam a se deteriorar aos 50 — mesmo seguindo as recomendações médicas?"
           </blockquote>
 
           <p>
-            A resposta é algo que seu corpo já é capaz de fazer, mas que a maioria dos médicos não compreende.
+            Essa pergunta me levou a uma busca incessante por respostas que iam além de comprimidos de cálcio sem graça, anti-inflamatórios ou suplementos caros que nunca funcionavam.
+          </p>
+
+          <p>
+            <strong>Foi então que descobri o trabalho de Elon Musk e sua equipe científica,</strong> um biólogo celular pioneiro focado nas causas ocultas da rápida deterioração óssea em mulheres idosas.
+          </p>
+
+          <p className="font-bold text-lg sm:text-xl">
+            E o que ele descobriu... mudou tudo.
           </p>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
-            Você já ouviu falar do peixe-zebra?
+            A descoberta revolucionária de Elon Musk — e a verdade alarmante sobre a perda óssea
           </h2>
 
           <figure className="my-6 sm:my-8 w-full">
             <div className="relative w-full h-[250px] sm:h-[350px] md:h-[400px] rounded-lg overflow-hidden bg-gray-200">
               <Image 
-                src={IMAGES.peixeZebraRegeneracao}
-                alt="Peixe-zebra regenerando tecidos"
+                src={IMAGES.elonMuskFoto}
+                alt="Elon Musk descoberta células zumbis"
                 fill
                 className="object-contain sm:object-cover"
                 unoptimized
@@ -164,58 +291,60 @@ export default function JointReset() {
               />
             </div>
             <figcaption className="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-3 italic px-2 sm:px-0">
-              O peixe-zebra consegue regenerar articulações, cartilagem e até partes da coluna vertebral em poucos dias.
+              Elon Musk e sua equipe descobriram conexão entre perda óssea de astronautas e envelhecimento na Terra. Foto: Arquivo
             </figcaption>
           </figure>
 
           <p>
-            Há décadas, cientistas estudam esse animal porque consegue regenerar articulações, cartilagem, tecidos e até partes da coluna vertebral em poucos dias.
+            <strong>Elon Musk não estava apenas lançando foguetes</strong> — ele acidentalmente revelou uma crise silenciosa de saúde que está destruindo milhões de mulheres de dentro para fora.
           </p>
 
           <p>
-            A maioria das pessoas acredita que os humanos perderam essa capacidade.
-          </p>
-
-          <p className="font-bold text-lg sm:text-xl">
-            Mas um grande estudo da Duke University de 2019 prova o contrário.
-          </p>
-
-          <p>
-            <strong>Esse estudo mostrou que os humanos possuem um sistema adormecido de regeneração articular,</strong> muito semelhante ao do peixe-zebra e das salamandras.
+            Durante anos, a NASA enfrentou um grande problema: os astronautas perdem rapidamente densidade óssea e força articular no espaço — <strong>da mesma forma que milhões de mulheres ao chegarem aos 50 anos.</strong> Musk queria respostas. Não apenas para os astronautas... mas para todos que envelhecem na Terra.
           </p>
 
           <div className="bg-blue-50 border-l-4 border-blue-600 pl-4 sm:pl-6 py-4 sm:py-6 my-6 sm:my-8 rounded-r-lg">
             <p className="font-bold mb-3 sm:mb-4">
-              Seus joelhos podem regenerar cartilagem.
+              Sua equipe de pesquisa fez uma conexão surpreendente:
             </p>
-            <p className="mb-3 sm:mb-4">
-              Sua coluna pode se recuperar.
-            </p>
-            <p className="font-bold text-blue-700">
-              Suas articulações podem ser suportadas novamente.
-            </p>
-            <p className="text-sm sm:text-base mt-3">
-              Mas isso só acontece se algo muito específico ocorrer primeiro.
+            <p>
+              O mesmo mecanismo biológico que destrói os ossos dos astronautas no espaço está silenciosamente atacando as mulheres à medida que envelhecem na Terra.
             </p>
           </div>
 
+          <p>
+            E no cerne desse problema está um grupo perturbador de células disfuncionais — agora conhecidas como <strong className="text-red-600">"células zumbis".</strong>
+          </p>
+
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
-            O Interruptor que Bloqueia a Regeneração
+            O que são "células zumbis" — e por que estão destruindo seus ossos
           </h2>
 
           <p>
-            <strong>Você precisa parar as moléculas microscópicas de inflamação que destroem sua cartilagem.</strong>
+            <strong>As "células zumbis" são células senescentes que se recusam a morrer,</strong> mas, em vez disso, permanecem no corpo, inundando os tecidos circundantes com substâncias químicas inflamatórias que corroem a estrutura óssea, destroem a cartilagem e aceleram a dor e a rigidez nas articulações.
           </p>
 
           <p>
-            Essas moléculas são chamadas <strong className="text-red-600">citocinas.</strong>
+            Durante anos, essas células anômalas foram consideradas inofensivas. Mas a equipe de Elon Musk descobriu algo muito mais perturbador:
           </p>
+
+          <blockquote className="text-lg sm:text-xl md:text-2xl font-bold text-red-700 italic text-center py-4 sm:py-6 my-6 sm:my-8 bg-red-50 rounded-lg px-4 sm:px-6 break-words">
+            "As células zumbis não apenas envelhecem seu corpo... elas sabotam ativamente seus ossos e articulações — muitas vezes décadas antes do aparecimento dos sintomas."
+          </blockquote>
+
+          <p>
+            Desde 2020, o acúmulo de células zumbis tornou-se uma epidemia invisível em mulheres idosas, roubando silenciosamente sua força, mobilidade e independência dia após dia.
+          </p>
+
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
+            "Seus ossos não estão apenas fracos — eles estão sendo atacados de dentro para fora"
+          </h2>
 
           <figure className="my-6 sm:my-8 w-full">
             <div className="relative w-full h-[250px] sm:h-[350px] md:h-[400px] rounded-lg overflow-hidden bg-gray-200">
               <Image 
-                src={IMAGES.citocinasAtaqueCartilagem}
-                alt="Citocinas atacando cartilagem"
+                src={IMAGES.ataqueCelulasZumbisDentro}
+                alt="Ataque de células zumbis na estrutura óssea"
                 fill
                 className="object-contain sm:object-cover"
                 unoptimized
@@ -223,55 +352,197 @@ export default function JointReset() {
               />
             </div>
             <figcaption className="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-3 italic px-2 sm:px-0">
-              Citocinas inflamatórias e seu impacto na cartilagem articular.
+              Células senescentes atacando a estrutura óssea.
             </figcaption>
           </figure>
 
+          <p>
+            No interior do seu corpo, milhões de células estão se tornando rebeldes — transformando-se no que os cientistas agora chamam de "células zumbis".
+          </p>
+
+          <p>
+            Essas células disfuncionais <strong>se recusam a morrer... mas também não se curam.</strong>
+          </p>
+
+          <p>
+            Em vez disso, elas liberam substâncias químicas inflamatórias tóxicas que corroem seus ossos e cartilagens de dentro para fora.
+          </p>
+
           <div className="bg-yellow-50 border-l-4 border-yellow-600 pl-4 sm:pl-6 py-4 sm:py-6 my-6 sm:my-8 rounded-r-lg">
-            <p className="mb-3 sm:mb-4 font-bold">
-              Quando as citocinas permanecem ativas, seu corpo não consegue regenerar nada.
+            <p className="mb-3 sm:mb-4">
+              <strong>Quando você é jovem,</strong> seu corpo consegue eliminar essas células anômalas antes que elas causem muitos danos.
             </p>
-            <p>
-              Elas bloqueiam a cicatrização, destroem cartilagem, deixam as articulações rígidas, ressecam o líquido sinovial e pressionam os nervos.
+            <p className="font-bold text-red-700">
+              Mas depois dos 50, esse sistema de defesa começa a falhar.
             </p>
           </div>
 
-          <p>
-            É por isso que:
-          </p>
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mt-6 sm:mt-8 mb-3 sm:mb-4 break-words">
+            E o que acontece a seguir é aterrador:
+          </h3>
 
           <ul className="list-none space-y-2 sm:space-y-3 my-4 sm:my-6">
             <li className="flex items-start">
               <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 mr-2 sm:mr-3 flex-shrink-0 mt-1" />
-              <span className="text-sm sm:text-base break-words">Bolsas térmicas ajudam apenas por alguns minutos</span>
+              <span className="text-sm sm:text-base break-words">A densidade óssea diminui em até <strong>2% ao ano</strong></span>
             </li>
             <li className="flex items-start">
               <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 mr-2 sm:mr-3 flex-shrink-0 mt-1" />
-              <span className="text-sm sm:text-base break-words">Analgésicos prejudicam o estômago mas não resolvem o problema</span>
+              <span className="text-sm sm:text-base break-words">A cartilagem articular torna-se mais fina, mais rígida e mais inflamada</span>
             </li>
             <li className="flex items-start">
               <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 mr-2 sm:mr-3 flex-shrink-0 mt-1" />
-              <span className="text-sm sm:text-base break-words">Injeções mascaram a dor enquanto o dano continua</span>
-            </li>
-            <li className="flex items-start">
-              <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 mr-2 sm:mr-3 flex-shrink-0 mt-1" />
-              <span className="text-sm sm:text-base break-words">Cirurgias frequentemente levam à síndrome pós-operatória</span>
+              <span className="text-sm sm:text-base break-words">Sua estrutura óssea torna-se frágil, quebradiça e vulnerável até mesmo a movimentos leves</span>
             </li>
           </ul>
 
           <p className="font-bold text-lg sm:text-xl text-red-700">
-            Seu corpo não está simplesmente envelhecendo — está sendo atacado de dentro.
+            Você pode não sentir nada até que já seja tarde demais.
+          </p>
+
+          <p>
+            Isso não é apenas rigidez. <strong>É deterioração estrutural.</strong>
+          </p>
+
+          <p className="font-bold text-lg sm:text-xl">
+            Seu esqueleto está se desfazendo — pedaço por pedaço.
           </p>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
-            A Descoberta que Mudou Tudo
+            Se você está apresentando esses sintomas, seus ossos e articulações podem já estar comprometidos
           </h2>
 
           <figure className="my-6 sm:my-8 w-full">
             <div className="relative w-full h-[250px] sm:h-[350px] md:h-[400px] rounded-lg overflow-hidden bg-gray-200">
               <Image 
-                src={IMAGES.dukeUniversityEstudo}
-                alt="Estudo Duke University"
+                src={IMAGES.celulasSenescentes}
+                alt="Sinais de células senescentes ativas"
+                fill
+                className="object-contain sm:object-cover"
+                unoptimized
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
+              />
+            </div>
+          </figure>
+
+          <div className="bg-red-50 rounded-lg p-6 sm:p-8 my-6 sm:my-8">
+            <p className="mb-4 sm:mb-6 text-sm sm:text-base">
+              Se você está enfrentando algum dos seguintes problemas, pode ser um sinal de que <strong>células zumbis já estão destruindo seus ossos e articulações de dentro para fora:</strong>
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <div className="flex items-start">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-red-600 text-white rounded-full flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 font-bold text-xs sm:text-sm">1</div>
+                <div>
+                  <p className="font-bold text-sm sm:text-base">Rigidez ou dor profunda</p>
+                  <p className="text-xs sm:text-sm text-gray-600">Persistente nos quadris, joelhos ou região lombar</p>
+                </div>
+              </div>
+
+              <div className="flex items-start">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-red-600 text-white rounded-full flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 font-bold text-xs sm:text-sm">2</div>
+                <div>
+                  <p className="font-bold text-sm sm:text-base">Sons de rangido ou estalo</p>
+                  <p className="text-xs sm:text-sm text-gray-600">Crepitação nas articulações ao se mover</p>
+                </div>
+              </div>
+
+              <div className="flex items-start">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-red-600 text-white rounded-full flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 font-bold text-xs sm:text-sm">3</div>
+                <div>
+                  <p className="font-bold text-sm sm:text-base">Dificuldade em levantar-se</p>
+                  <p className="text-xs sm:text-sm text-gray-600">De uma cadeira sem usar os braços</p>
+                </div>
+              </div>
+
+              <div className="flex items-start">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-red-600 text-white rounded-full flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 font-bold text-xs sm:text-sm">4</div>
+                <div>
+                  <p className="font-bold text-sm sm:text-base">Medo de cair</p>
+                  <p className="text-xs sm:text-sm text-gray-600">Especialmente em escadas ou terrenos irregulares</p>
+                </div>
+              </div>
+
+              <div className="flex items-start">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-red-600 text-white rounded-full flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 font-bold text-xs sm:text-sm">5</div>
+                <div>
+                  <p className="font-bold text-sm sm:text-base">Diminuição da altura</p>
+                  <p className="text-xs sm:text-sm text-gray-600">Ou postura visivelmente curvada</p>
+                </div>
+              </div>
+
+              <div className="flex items-start">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-red-600 text-white rounded-full flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 font-bold text-xs sm:text-sm">6</div>
+                <div>
+                  <p className="font-bold text-sm sm:text-base">Fraqueza muscular</p>
+                  <p className="text-xs sm:text-sm text-gray-600">Ao carregar compras, subir escadas ou caminhar</p>
+                </div>
+              </div>
+            </div>
+
+            <p className="mt-4 sm:mt-6 font-bold text-sm sm:text-base">
+              E eventualmente… você começa a dizer não às coisas que davam sentido à vida:
+            </p>
+            <p className="text-gray-600 text-sm sm:text-base break-words">
+              Jardinagem • Viajar • Brincando com os netos • Até mesmo ir à igreja ou visitar amigos.
+            </p>
+          </div>
+
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
+            Por que os tratamentos "padrão" não apenas falham, como também pioram a situação
+          </h2>
+
+          <figure className="my-6 sm:my-8 w-full">
+            <div className="relative w-full h-[250px] sm:h-[350px] md:h-[400px] rounded-lg overflow-hidden bg-gray-200">
+              <Image 
+                src={IMAGES.pesquisaNasaDensidadeOssea}
+                alt="Pesquisa NASA sobre densidade óssea"
+                fill
+                className="object-contain sm:object-cover"
+                unoptimized
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
+              />
+            </div>
+          </figure>
+
+          <div className="space-y-4 sm:space-y-6 my-6 sm:my-8">
+            <div className="border-l-4 border-gray-300 pl-4 sm:pl-6">
+              <h3 className="text-lg sm:text-xl font-bold mb-2 break-words">Suplementos de cálcio?</h3>
+              <p className="text-sm sm:text-base">Você absorve muito pouco disso. O que você absorve pode acabar <strong>endurecendo suas artérias mais do que seus ossos.</strong></p>
+            </div>
+
+            <div className="border-l-4 border-gray-300 pl-4 sm:pl-6">
+              <h3 className="text-lg sm:text-xl font-bold mb-2 break-words">Bifosfonatos como Fosamax ou Boniva?</h3>
+              <p className="mb-3 text-sm sm:text-base">Esses medicamentos podem retardar temporariamente a perda óssea, mas <strong>a que custo?</strong></p>
+              <div className="bg-gray-100 rounded p-3 sm:p-4">
+                <p className="font-bold text-xs sm:text-sm mb-2">Efeitos colaterais incluem:</p>
+                <ul className="text-xs sm:text-sm space-y-1">
+                  <li>• Necrose óssea na mandíbula</li>
+                  <li>• Úlceras</li>
+                  <li>• Câncer de esôfago</li>
+                  <li>• Alto risco de fraturas espontâneas</li>
+                </ul>
+              </div>
+              <p className="mt-3 font-bold text-red-700 text-sm sm:text-base break-words">
+                Medicamentos destinados a prevenir fraturas podem, na verdade, causá-las.
+              </p>
+            </div>
+
+            <div className="border-l-4 border-gray-300 pl-4 sm:pl-6">
+              <h3 className="text-lg sm:text-xl font-bold mb-2 break-words">Glucosamina e condroitina?</h3>
+              <p className="text-sm sm:text-base">Estudo após estudo mostra <strong>pouca ou nenhuma melhoria mensurável</strong> no espaço articular ou na mobilidade.</p>
+            </div>
+          </div>
+
+          <blockquote className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-900 text-center py-6 sm:py-8 my-8 sm:my-10 bg-blue-50 rounded-lg px-4 sm:px-6 break-words">
+            "Se você ainda não está acamada, seu corpo ainda está implorando por cura."
+          </blockquote>
+
+          <figure className="my-6 sm:my-8 w-full">
+            <div className="relative w-full h-[250px] sm:h-[350px] md:h-[400px] rounded-lg overflow-hidden bg-gray-200">
+              <Image 
+                src={IMAGES.raioXOssoSaudavel}
+                alt="Diferença entre osso saudável e fragilizado"
                 fill
                 className="object-contain sm:object-cover"
                 unoptimized
@@ -279,67 +550,105 @@ export default function JointReset() {
               />
             </div>
             <figcaption className="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-3 italic px-2 sm:px-0">
-              Duke University 2019: Estudo sobre regeneração articular em humanos.
+              Estrutura óssea: a diferença entre ossos saudáveis e fracos. Foto: Divulgação
             </figcaption>
           </figure>
 
           <p>
-            Quando trabalhei com o Boston Celtics, tinha acesso às tecnologias de regeneração mais avançadas do mundo.
-          </p>
-
-          <p>
-            E ainda assim, notei algo estranho: alguns jogadores cicatrizavam em semanas, enquanto outros levavam meses.
+            O que você está sentindo agora não é apenas dor.
           </p>
 
           <p className="font-bold text-lg sm:text-xl">
-            Os "super-curadores" tinham uma coisa em comum.
+            É um sinal. Um último aviso.
           </p>
 
           <p>
-            Nenhum suplemento, nenhum medicamento, nenhuma genética especial — mas valores <strong>extremamente altos</strong> de uma substância natural de lubrificação articular que o corpo produz por si só.
+            Porque, no interior dos seus ossos e articulações, ainda existem células vivas tentando reconstruir, tentando manter a posição.
+          </p>
+
+          <p className="font-bold">
+            Mas elas estão sobrecarregadas.
+          </p>
+
+          <p className="text-red-700">
+            Rodeadas por inflamação. Sufocadas por células zumbis. Privadas dos estímulos necessários para sobreviver.
           </p>
 
           <div className="bg-green-50 border-l-4 border-green-600 pl-4 sm:pl-6 py-4 sm:py-6 my-6 sm:my-8 rounded-r-lg">
-            <p className="mb-3 sm:mb-4">
-              <strong>Essa substância hidrata as articulações,</strong> aumenta o espaço da cartilagem, reduz a pressão nos nervos, permite movimento suave e ativa a regeneração.
+            <p className="mb-3 sm:mb-4 text-sm sm:text-base">
+              <strong>Mas se você ainda sente desconforto</strong> — se seu corpo ainda está reagindo — isso significa que ainda há tempo.
             </p>
-            <p className="font-bold mb-3 sm:mb-4">
-              Chamo de <span className="text-green-700">"ponto de reset articular".</span>
+            <p className="font-bold text-lg sm:text-xl mb-3 sm:mb-4">
+              Esta ainda é uma chance de:
             </p>
-            <p className="text-sm sm:text-base">
-              Quando as citocinas estão altas, esse sistema desliga. Quando as citocinas caem, ele aumenta significativamente.
-            </p>
+            <ul className="space-y-2">
+              <li className="flex items-start">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0 mt-1" />
+                <span className="text-sm sm:text-base break-words">Eliminar as células zumbis que desencadeiam inflamação e deterioração</span>
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0 mt-1" />
+                <span className="text-sm sm:text-base break-words">Reativar a capacidade do seu corpo de construir ossos e reparar cartilagens</span>
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0 mt-1" />
+                <span className="text-sm sm:text-base break-words">Sentir-se mais forte, estável e flexível semana após semana</span>
+              </li>
+            </ul>
           </div>
 
-          <p className="font-bold text-lg sm:text-xl">
-            Esse era o pedaço do quebra-cabeça que faltava — <span className="text-blue-700">o interruptor biológico da regeneração.</span>
-          </p>
+          {/* ============================================
+              MUDANÇA 2: SEÇÃO DE ESCLARECIMENTO
+              ============================================ */}
+          <div className="bg-blue-50 border-2 border-blue-400 rounded-lg p-6 sm:p-8 my-8 sm:my-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-blue-900 mb-4 sm:mb-6 text-center break-words">
+              🎯 Entenda o Protocolo: 8 Técnicas em 7 Minutos
+            </h2>
+
+            <div className="space-y-4 sm:space-y-6">
+              <p className="text-base sm:text-lg break-words">
+                Você pode estar se perguntando: <strong>"São 8 técnicas ou 7 minutos?"</strong> A resposta é simples e genial:
+              </p>
+
+              <div className="bg-white rounded-lg p-4 sm:p-6 border-l-4 border-blue-600">
+                <p className="text-gray-700 text-sm sm:text-base mb-3">
+                  <strong>O Protocolo contém 8 técnicas científicas diferentes.</strong> A rotina MATINAL principal (que elimina células zumbis) leva 7 minutos. Você pode fazer as 8 no primeiro mês ou começar apenas com as 3 principais nos primeiros dias.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-lg p-4 sm:p-6 border-l-4 border-green-600">
+                <h3 className="font-bold text-gray-900 mb-3 text-sm sm:text-base">Como funciona na prática:</h3>
+                <ul className="space-y-2 text-sm sm:text-base">
+                  <li><strong>SEMANA 1-2:</strong> Você aprende as 3 técnicas principais (5-7 minutos)</li>
+                  <li><strong>SEMANA 3-4:</strong> Adiciona mais 2 técnicas (10-12 minutos)</li>
+                  <li><strong>SEMANA 5+:</strong> Protocolo completo com todas as 8 (15 minutos)</li>
+                </ul>
+                <p className="mt-3 text-gray-700 text-sm sm:text-base">
+                  A maioria das pessoas nota mudanças significativas na <strong>SEMANA 1</strong>, mesmo fazendo apenas as 3 primeiras técnicas.
+                </p>
+              </div>
+
+              <div className="bg-yellow-100 border border-yellow-400 rounded-lg p-4 sm:p-6 text-center">
+                <p className="font-bold text-yellow-900 text-sm sm:text-base break-words">
+                  O importante é começar. Seus ossos não podem esperar.
+                </p>
+              </div>
+            </div>
+          </div>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
-            Apresentando o Método Joint Reset
+            O protocolo revolucionário que ajuda os ossos a se regenerarem e as articulações a se revitalizarem
           </h2>
 
           <p>
-            Desenvolvi uma <strong>técnica simples, segura e cientificamente comprovada</strong> que reativa esse ponto de reset articular e liga novamente o interruptor natural de regeneração do corpo.
-          </p>
-
-          <p>
-            Queria algo que qualquer pessoa pudesse fazer em casa, sem pílulas, sem cirurgias, sem injeções, sem medicamentos perigosos, sem fisioterapia cara e sem equipamentos.
-          </p>
-
-          <p className="font-bold text-lg sm:text-xl">
-            O resultado é o <span className="text-blue-700">Método Joint Reset</span> — um protocolo de regeneração articular cientificamente validado que você pode executar completamente em casa.
-          </p>
-
-          <p>
-            Tudo explicado em um simples eBook.
+            A descoberta de Elon Musk levou ao desenvolvimento de um <strong>protocolo revolucionário</strong> que aborda a deterioração óssea na sua origem.
           </p>
 
           <figure className="my-8 sm:my-10 w-full">
             <div className="relative w-full h-[250px] sm:h-[350px] md:h-[400px] rounded-lg overflow-hidden shadow-lg bg-gray-200">
               <Image 
-                src={IMAGES.metodoJointReset}
-                alt="Método Joint Reset eBook"
+                src={IMAGES.protocoloAntiCelulasZumbis}
+                alt="Protocolo de Regeneração Óssea Anti-Células Zumbis"
                 fill
                 className="object-contain sm:object-cover"
                 unoptimized
@@ -348,101 +657,270 @@ export default function JointReset() {
             </div>
           </figure>
 
+          {/* ============================================
+              MUDANÇA 3: SEÇÃO DAS 8 TÉCNICAS DETALHADAS
+              ============================================ */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
-            O Que Você Recebe
+            As 8 Técnicas Revolucionárias Que Eliminam Células Zumbis
           </h2>
 
-          <div className="bg-blue-50 rounded-lg p-6 sm:p-8 my-6 sm:my-8">
-            <p className="font-bold text-lg sm:text-xl mb-4 sm:mb-6 break-words">
-              No eBook Joint Reset você encontra:
+          <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-center break-words">
+            Este potente sistema contém <strong>8 técnicas específicas</strong>, cada uma desenvolvida para atacar células zumbis de um ângulo diferente:
+          </p>
+
+          <div className="space-y-4 sm:space-y-6 my-8 sm:my-10">
+            {TECNICAS.map((tecnica) => (
+              <div key={tecnica.numero} className={`${tecnica.cor} border-l-4 ${tecnica.corBorda} rounded-r-lg p-4 sm:p-6`}>
+                <div className="flex items-start gap-3 sm:gap-4 mb-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-gray-800 to-gray-900 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 text-sm sm:text-base">
+                    {tecnica.numero}
+                  </div>
+                  <h3 className="font-bold text-base sm:text-lg break-words pt-1">{tecnica.titulo}</h3>
+                </div>
+
+                <div className="ml-11 space-y-3">
+                  <div>
+                    <p className="text-xs sm:text-sm font-bold text-red-700 mb-1">🎯 PROBLEMA QUE RESOLVE:</p>
+                    <p className="text-sm sm:text-base text-gray-700 break-words">{tecnica.problema}</p>
+                  </div>
+
+                  <div>
+                    <p className="text-xs sm:text-sm font-bold text-blue-700 mb-1">💡 COMO FUNCIONA:</p>
+                    <p className="text-sm sm:text-base text-gray-700 break-words">{tecnica.funcionamento}</p>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div className="bg-white rounded p-2 sm:p-3">
+                      <p className="text-xs font-bold text-gray-600">⏱️ TEMPO</p>
+                      <p className="text-sm font-bold text-gray-900">{tecnica.tempo}</p>
+                    </div>
+                    <div className="bg-white rounded p-2 sm:p-3">
+                      <p className="text-xs font-bold text-gray-600">🕐 QUANDO</p>
+                      <p className="text-sm font-bold text-gray-900">{tecnica.quando}</p>
+                    </div>
+                    <div className="bg-white rounded p-2 sm:p-3">
+                      <p className="text-xs font-bold text-gray-600">✅ RESULTADO</p>
+                      <p className="text-sm font-bold text-green-700">{tecnica.resultado}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-gradient-to-r from-gray-900 to-blue-900 text-white rounded-lg p-8 my-10 text-center">
+            <h3 className="text-2xl font-bold mb-4">⚔️ A GUERRA CONTRA AS CÉLULAS ZUMBIS</h3>
+            <p className="text-xl mb-6 break-words">
+              Pela primeira vez na história, você tem as <strong>8 armas científicas precisas</strong> para vencer esta batalha celular
             </p>
-            
-            <div className="space-y-3 sm:space-y-4">
-              <div className="bg-white rounded-lg p-3 sm:p-4 flex items-start">
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 mr-3 flex-shrink-0 mt-0.5" />
-                <p className="text-sm sm:text-base break-words">Uma rotina de <strong>7 minutos</strong> que desativa citocinas</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-red-800 rounded p-4">
+                <h4 className="font-bold text-lg mb-2">🎯 CÉLULAS ZUMBIS ELIMINADAS:</h4>
+                <p className="text-sm">Citocinas bloqueadas • Senescência interrompida • Inflamação neutralizada</p>
               </div>
-              
-              <div className="bg-white rounded-lg p-3 sm:p-4 flex items-start">
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 mr-3 flex-shrink-0 mt-0.5" />
-                <p className="text-sm sm:text-base break-words">Uma sequência de mobilidade precisa que relubrifica as articulações</p>
-              </div>
-              
-              <div className="bg-white rounded-lg p-3 sm:p-4 flex items-start">
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 mr-3 flex-shrink-0 mt-0.5" />
-                <p className="text-sm sm:text-base break-words">Uma técnica neurossomática que relaxa os nervos</p>
-              </div>
-              
-              <div className="bg-white rounded-lg p-3 sm:p-4 flex items-start">
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 mr-3 flex-shrink-0 mt-0.5" />
-                <p className="text-sm sm:text-base break-words">Um plano alimentar <strong>anti-citocina</strong> cientificamente comprovado</p>
-              </div>
-              
-              <div className="bg-white rounded-lg p-3 sm:p-4 flex items-start">
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 mr-3 flex-shrink-0 mt-0.5" />
-                <p className="text-sm sm:text-base break-words">Um ritual diário para ativar regeneração</p>
-              </div>
-              
-              <div className="bg-white rounded-lg p-3 sm:p-4 flex items-start">
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 mr-3 flex-shrink-0 mt-0.5" />
-                <p className="text-sm sm:text-base break-words">Uma técnica de reidratação de cartilagem</p>
-              </div>
-              
-              <div className="bg-white rounded-lg p-3 sm:p-4 flex items-start">
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 mr-3 flex-shrink-0 mt-0.5" />
-                <p className="text-sm sm:text-base break-words">Uma sequência de deslizamento vertebral</p>
-              </div>
-              
-              <div className="bg-white rounded-lg p-3 sm:p-4 flex items-start">
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 mr-3 flex-shrink-0 mt-0.5" />
-                <p className="text-sm sm:text-base break-words">O mapa completo de reset articular</p>
+              <div className="bg-green-800 rounded p-4">
+                <h4 className="font-bold text-lg mb-2">✅ REGENERAÇÃO ATIVADA:</h4>
+                <p className="text-sm">Ossos reconstruídos • Articulações lubrificadas • Nervos relaxados</p>
               </div>
             </div>
           </div>
 
-          <p className="font-bold text-lg sm:text-xl">
-            Esse método ativa o mesmo caminho biológico de regeneração descoberto no estudo de Duke — o mesmo caminho que os peixes-zebra usam para regenerar tecidos.
-          </p>
-
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
-            Imagine Acordar Amanhã...
+          {/* ============================================
+              MUDANÇA 4: CRONOLOGIA SEMANA-A-SEMANA
+              ============================================ */}
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words text-center">
+            A Progressão Científica: O Que Acontece Semana a Semana
           </h2>
 
-          <div className="bg-green-50 rounded-lg p-6 sm:p-8 my-6 sm:my-8">
-            <p className="text-lg sm:text-xl mb-4 sm:mb-6 break-words">
-              ...com joelhos macios e hidratados, uma coluna vertebral flexível, ombros sem rigidez, mãos fortes e sem dor, sem pressão nos nervos, sem rigidez matinal.
-            </p>
-            <p className="font-bold text-lg sm:text-xl mb-4 sm:mb-6">
-              Imagine poder:
-            </p>
-            <ul className="space-y-2">
-              <li className="flex items-start">
-                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0 mt-1" />
-                <span className="text-sm sm:text-base break-words">Caminhar novamente sem dor</span>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0 mt-1" />
-                <span className="text-sm sm:text-base break-words">Jogar golfe ou praticar seus esportes favoritos</span>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0 mt-1" />
-                <span className="text-sm sm:text-base break-words">Fazer jardinagem e viajar</span>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0 mt-1" />
-                <span className="text-sm sm:text-base break-words">Simplesmente caminhar sem dor</span>
-              </li>
-            </ul>
+          <div className="space-y-4 sm:space-y-6 my-8 sm:my-10">
+            {CRONOLOGIA.map((item, idx) => (
+              <div key={idx} className={`${item.cor} border-2 ${item.corBorda} rounded-lg p-6 sm:p-8`}>
+                <div className="mb-4">
+                  <p className="text-sm font-bold text-gray-600">{item.semana}</p>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{item.fase}</h3>
+                </div>
+
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <span className="font-bold text-lg">📋</span>
+                    <div>
+                      <p className="font-bold text-sm text-gray-700">Técnicas Ativadas:</p>
+                      <p className="text-gray-700">{item.tecnicas}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <span className="font-bold text-lg">🔬</span>
+                    <div>
+                      <p className="font-bold text-sm text-gray-700">O Que Acontece Biologicamente:</p>
+                      <p className="text-gray-700">{item.biologico}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <span className="font-bold text-lg">💫</span>
+                    <div>
+                      <p className="font-bold text-sm text-gray-700">O Que Você Sente:</p>
+                      <p className="text-gray-700">{item.sensacao}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <span className="font-bold text-lg">🎯</span>
+                    <div>
+                      <p className="font-bold text-sm text-gray-700">Status das Células Zumbis:</p>
+                      <p className="text-gray-900 font-bold text-lg">{item.status}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* ============================================
+              MUDANÇA 5: O QUE VOCÊ PODE ESPERAR - ESPECÍFICO
+              ============================================ */}
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
+            O Que Você Pode Esperar — Semana por Semana
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 my-8 sm:my-10">
+            <div className="bg-red-50 rounded-lg p-4 sm:p-6 border-2 border-red-300">
+              <h3 className="text-lg sm:text-xl font-bold text-red-800 mb-3">🔴 SEMANA 1</h3>
+              <ul className="space-y-2">
+                <li className="flex items-start">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 mr-2 flex-shrink-0 mt-1" />
+                  <span className="text-sm sm:text-base">Menos rigidez ao acordar</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 mr-2 flex-shrink-0 mt-1" />
+                  <span className="text-sm sm:text-base">Melhor qualidade de sono</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 mr-2 flex-shrink-0 mt-1" />
+                  <span className="text-sm sm:text-base">Redução de 20-30% na dor</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-yellow-50 rounded-lg p-4 sm:p-6 border-2 border-yellow-300">
+              <h3 className="text-lg sm:text-xl font-bold text-yellow-800 mb-3">🟡 SEMANA 2</h3>
+              <ul className="space-y-2">
+                <li className="flex items-start">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-600 mr-2 flex-shrink-0 mt-1" />
+                  <span className="text-sm sm:text-base">Articulações se movem sem estalos</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-600 mr-2 flex-shrink-0 mt-1" />
+                  <span className="text-sm sm:text-base">Confiança ao subir/descer escadas</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-600 mr-2 flex-shrink-0 mt-1" />
+                  <span className="text-sm sm:text-base">Menos inflamação sistêmica</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-blue-50 rounded-lg p-4 sm:p-6 border-2 border-blue-300">
+              <h3 className="text-lg sm:text-xl font-bold text-blue-800 mb-3">🔵 SEMANA 4</h3>
+              <ul className="space-y-2">
+                <li className="flex items-start">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 mr-2 flex-shrink-0 mt-1" />
+                  <span className="text-sm sm:text-base">Força muscular notavelmente melhorada</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 mr-2 flex-shrink-0 mt-1" />
+                  <span className="text-sm sm:text-base">Postura mais ereta naturalmente</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 mr-2 flex-shrink-0 mt-1" />
+                  <span className="text-sm sm:text-base">Capacidade de fazer atividades sem medo</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-green-50 rounded-lg p-4 sm:p-6 border-2 border-green-300">
+              <h3 className="text-lg sm:text-xl font-bold text-green-800 mb-3">🟢 SEMANA 8</h3>
+              <ul className="space-y-2">
+                <li className="flex items-start">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0 mt-1" />
+                  <span className="text-sm sm:text-base">Densidade óssea aumentada visualmente</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0 mt-1" />
+                  <span className="text-sm sm:text-base">Independência completa recuperada</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0 mt-1" />
+                  <span className="text-sm sm:text-base">Mobilidade que você pensava ter perdido</span>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
-            O Que Pessoas Reais Estão Dizendo
+            Como aplicar o Protocolo Anti-Células Zumbis para alívio máximo
+          </h2>
+
+          <p>
+            Obter resultados com o Protocolo Anti-Células Zumbis é <strong>simples.</strong>
+          </p>
+
+          <div className="bg-blue-50 rounded-lg p-6 sm:p-8 my-6 sm:my-8 text-center">
+            <p className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 break-words">
+              📅 Basta seguir o protocolo de 15 minutos todas as manhãs após acordar.
+            </p>
+            <p className="text-gray-700 text-sm sm:text-base break-words">
+              Para resultados mais rápidos, muitos usuários aplicam o protocolo vespertino adicional, especialmente nos primeiros 30 a 60 dias.
+            </p>
+          </div>
+
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mt-6 sm:mt-8 mb-3 sm:mb-4 break-words">
+            Desde a primeira aplicação, o Protocolo ativa:
+          </h3>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 my-4 sm:my-6">
+            <div className="bg-green-50 rounded-lg p-3 sm:p-4 flex items-center">
+              <Activity className="w-6 h-6 sm:w-8 sm:h-8 text-green-600 mr-2 sm:mr-3 flex-shrink-0" />
+              <p className="font-bold text-sm sm:text-base break-words">Elimina as células zumbis inflamatórias</p>
+            </div>
+            <div className="bg-blue-50 rounded-lg p-3 sm:p-4 flex items-center">
+              <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600 mr-2 sm:mr-3 flex-shrink-0" />
+              <p className="font-bold text-sm sm:text-base break-words">Ativa proteínas formadoras de osso</p>
+            </div>
+            <div className="bg-purple-50 rounded-lg p-3 sm:p-4 flex items-center">
+              <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600 mr-2 sm:mr-3 flex-shrink-0" />
+              <p className="font-bold text-sm sm:text-base break-words">Alivia dores e inchaço nas articulações</p>
+            </div>
+            <div className="bg-yellow-50 rounded-lg p-3 sm:p-4 flex items-center">
+              <Award className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-600 mr-2 sm:mr-3 flex-shrink-0" />
+              <p className="font-bold text-sm sm:text-base break-words">Reconstrói a força de dentro para fora</p>
+            </div>
+          </div>
+
+          <div className="bg-green-50 border-l-4 border-green-600 pl-4 sm:pl-6 py-4 sm:py-6 my-6 sm:my-8 rounded-r-lg">
+            <p className="mb-3 sm:mb-4 text-sm sm:text-base">
+              <strong>Inicialmente,</strong> você notará mudanças sutis: Mais energia. Melhor sono. Menos rigidez ao acordar.
+            </p>
+            <p className="font-bold text-lg sm:text-xl mb-3 sm:mb-4">
+              Então algo incrível acontece...
+            </p>
+            <p className="mb-3 sm:mb-4 text-sm sm:text-base">
+              Subir escadas não te assusta. Levantar-se de uma cadeira não exige estratégia.
+            </p>
+            <p className="font-bold text-lg sm:text-xl text-green-800 break-words">
+              Você se move com confiança. É como recuperar a própria vida.
+            </p>
+          </div>
+
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
+            O que as pessoas estão dizendo sobre o Protocolo
           </h2>
 
           <div className="border-l-4 border-blue-600 pl-4 sm:pl-6 py-4 sm:py-6 my-6 sm:my-8 bg-gray-50 rounded-r-lg">
             <div className="flex items-center mb-3 sm:mb-4">
               <div>
-                <p className="font-bold text-base sm:text-lg">Brad do Colorado</p>
+                <p className="font-bold text-base sm:text-lg">Helena, 68 anos</p>
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
                     <span key={i} className="text-yellow-500 text-sm sm:text-base">★</span>
@@ -451,17 +929,20 @@ export default function JointReset() {
               </div>
             </div>
             <p className="font-bold text-lg sm:text-xl mb-2 sm:mb-3 break-words">
-              "Após algumas semanas, meus joelhos se movem melhor do que nos últimos 20 anos."
+              "Senti a diferença nos meus joelhos em poucos dias."
             </p>
-            <p className="text-gray-700 text-sm sm:text-base break-words italic">
-              Tentei de tudo: cálcio, glucosamina, cremes. Mas nada funcionou até que comecei o Joint Reset. A diferença é noturna.
+            <p className="text-gray-700 mb-2 sm:mb-3 italic text-sm sm:text-base break-words">
+              "Tentei de tudo: cálcio, glucosamina, cremes. Mas nada fez meus joelhos se sentirem estáveis novamente. Comecei a seguir o Protocolo Anti-Células Zumbis há alguns meses e senti a diferença em poucos dias. A dor diminuiu e não me sentia mais como se estivesse a um passo de uma lesão."
+            </p>
+            <p className="text-gray-700 font-bold text-sm sm:text-base break-words">
+              "Agora passeio com meu cachorro todas as manhãs sem medo. Até voltei ao jardim. Sigo o protocolo todos os dias e nunca vou parar."
             </p>
           </div>
 
           <div className="border-l-4 border-green-600 pl-4 sm:pl-6 py-4 sm:py-6 my-6 sm:my-8 bg-gray-50 rounded-r-lg">
             <div className="flex items-center mb-3 sm:mb-4">
               <div>
-                <p className="font-bold text-base sm:text-lg">Sandy do Michigan</p>
+                <p className="font-bold text-base sm:text-lg">Ruth, 64 anos</p>
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
                     <span key={i} className="text-yellow-500 text-sm sm:text-base">★</span>
@@ -470,17 +951,20 @@ export default function JointReset() {
               </div>
             </div>
             <p className="font-bold text-lg sm:text-xl mb-2 sm:mb-3 break-words">
-              "Minhas dores nas costas controlavam minha vida. A rotina de hidratação mudou tudo."
+              "Cada semana me aproximava de me sentir eu mesma novamente."
             </p>
-            <p className="text-gray-700 text-sm sm:text-base break-words italic">
-              Não aguento mais os analgésicos. O Joint Reset é a primeira coisa que realmente funcionou.
+            <p className="text-gray-700 mb-2 sm:mb-3 italic text-sm sm:text-base break-words">
+              "Depois da primeira semana, minhas articulações não estavam mais tão rígidas. No segundo mês, conseguia me levantar sem me apoiar. No terceiro? Dancei no casamento da minha sobrinha — e quando digo dancei, é dancei mesmo."
+            </p>
+            <p className="text-gray-700 font-bold text-sm sm:text-base break-words">
+              "O protocolo não apenas ajudou meus ossos, como me devolveu a confiança. Sinto-me forte novamente."
             </p>
           </div>
 
           <div className="border-l-4 border-purple-600 pl-4 sm:pl-6 py-4 sm:py-6 my-6 sm:my-8 bg-gray-50 rounded-r-lg">
             <div className="flex items-center mb-3 sm:mb-4">
               <div>
-                <p className="font-bold text-base sm:text-lg">Duane da Flórida</p>
+                <p className="font-bold text-base sm:text-lg">Diane, 66 anos</p>
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
                     <span key={i} className="text-yellow-500 text-sm sm:text-base">★</span>
@@ -489,36 +973,24 @@ export default function JointReset() {
               </div>
             </div>
             <p className="font-bold text-lg sm:text-xl mb-2 sm:mb-3 break-words">
-              "Minhas dores no pescoço desapareceram após a sequência de relaxamento."
+              "Estava cética, mas em 10 dias me senti mais forte."
             </p>
-            <p className="text-gray-700 text-sm sm:text-base break-words italic">
-              Parecia impossível que algo tão simples pudesse funcionar. Mas funciona.
+            <p className="text-gray-700 mb-2 sm:mb-3 italic text-sm sm:text-base break-words">
+              "Sigo o Protocolo há uma semana e meia, e estou impressionada com a rapidez. Antes, não conseguia dormir sem analgésicos. Meus joelhos gritavam toda vez que me levantava."
             </p>
-          </div>
-
-          <div className="border-l-4 border-pink-600 pl-4 sm:pl-6 py-4 sm:py-6 my-6 sm:my-8 bg-gray-50 rounded-r-lg">
-            <div className="flex items-center mb-3 sm:mb-4">
-              <div>
-                <p className="font-bold text-base sm:text-lg">Mary de Utah</p>
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-yellow-500 text-sm sm:text-base">★</span>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <p className="font-bold text-lg sm:text-xl mb-2 sm:mb-3 break-words">
-              "Meus dedos estavam rígidos. Agora consigo tocar piano novamente."
+            <p className="text-gray-700 mb-2 sm:mb-3 italic text-sm sm:text-base break-words">
+              "Hoje? Atravessei a cidade, passei por três lojas e não precisei sentar nenhuma vez. A dor melhorou pelo menos 75 a 80% — e sinto-me estável. Confiante."
             </p>
-            <p className="text-gray-700 text-sm sm:text-base break-words italic">
-              Pensei que tinha perdido essa parte de mim. É incrível recuperar.
+            <p className="text-gray-700 font-bold text-sm sm:text-base break-words">
+              "Não uso mais almofada térmica. Pela primeira vez em muito tempo, sinto que há esperança novamente."
             </p>
           </div>
 
+          {/* MUDANÇA 6: NOVO DEPOIMENTO */}
           <div className="border-l-4 border-orange-600 pl-4 sm:pl-6 py-4 sm:py-6 my-6 sm:my-8 bg-gray-50 rounded-r-lg">
             <div className="flex items-center mb-3 sm:mb-4">
               <div>
-                <p className="font-bold text-base sm:text-lg">Olivia do Oregon</p>
+                <p className="font-bold text-base sm:text-lg">Margarete, 62 anos</p>
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
                     <span key={i} className="text-yellow-500 text-sm sm:text-base">★</span>
@@ -527,18 +999,27 @@ export default function JointReset() {
               </div>
             </div>
             <p className="font-bold text-lg sm:text-xl mb-2 sm:mb-3 break-words">
-              "Minhas articulações do quadril pareciam osso com osso. Hoje corro novamente."
+              "Comecei apenas com as 3 primeiras técnicas — e funcionou!"
             </p>
-            <p className="text-gray-700 text-sm sm:text-base break-words italic">
-              Os médicos disseram que nunca mais correria. A medicina dos médicos não é tudo.
+            <p className="text-gray-700 mb-2 sm:mb-3 italic text-sm sm:text-base break-words">
+              "Estava cética porque tenho artrite avançada. Não quis fazer tudo de uma vez. Comecei apenas com a Técnica 1 (7 minutos) + Técnica 3 (dor) + Técnica 4 (alimentar)."
+            </p>
+            <p className="text-gray-700 mb-2 sm:mb-3 italic text-sm sm:text-base break-words">
+              "No TERCEIRO DIA, já sentia menos rigidez. No OITAVO DIA, dormi sem analgésicos pela primeira vez em 3 anos."
+            </p>
+            <p className="text-gray-700 mb-2 sm:mb-3 italic text-sm sm:text-base break-words">
+              "Agora estou na semana 6 com as 8 técnicas completas. Meus dedos estão menos inchados. Consigo escrever sem dor. Fiz uma caminhada de 45 minutos ontem — algo que não conseguia há 10 anos."
+            </p>
+            <p className="text-gray-700 font-bold text-sm sm:text-base break-words">
+              "O protocolo é de verdade. As 8 técnicas funcionam porque cada uma elimina células zumbis de um ângulo diferente. Não precisa fazer todas de uma vez!"
             </p>
           </div>
 
           <figure className="my-6 sm:my-8 w-full">
             <div className="relative w-full h-[250px] sm:h-[350px] md:h-[400px] rounded-lg overflow-hidden bg-gray-200">
               <Image 
-                src={IMAGES.mobilidadeRecuperada}
-                alt="Mobilidade recuperada"
+                src={IMAGES.esperancaRenovada}
+                alt="Esperança renovada - Mulheres recuperando qualidade de vida"
                 fill
                 className="object-contain sm:object-cover"
                 unoptimized
@@ -546,20 +1027,20 @@ export default function JointReset() {
               />
             </div>
             <figcaption className="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-3 italic px-2 sm:px-0">
-              Pessoas recuperando mobilidade e qualidade de vida com o Joint Reset.
+              Mulheres recuperando mobilidade e confiança através do protocolo. Foto: Divulgação
             </figcaption>
           </figure>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
-            O Que a Comunidade Médica Tem a Dizer
-          </h2>
-
           <div className="bg-blue-50 rounded-lg p-6 sm:p-8 my-8 sm:my-10">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 text-center break-words">
+              O que a comunidade médica tem a dizer
+            </h3>
+            
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
               <div className="w-16 h-16 sm:w-24 sm:h-24 bg-gray-300 rounded-full flex-shrink-0 overflow-hidden relative">
                 <Image 
-                  src={IMAGES.especialistaHarvard}
-                  alt="Especialista Harvard"
+                  src={IMAGES.draMarina}
+                  alt="Dra. Marina Santos"
                   fill
                   className="object-contain sm:object-cover"
                   unoptimized
@@ -567,26 +1048,83 @@ export default function JointReset() {
               </div>
               <div className="text-center sm:text-left">
                 <p className="text-lg sm:text-xl text-gray-800 mb-3 sm:mb-4 italic break-words">
-                  "Analisei inúmeros protocolos para regeneração articular e o <strong>Joint Reset é único.</strong> Se você sofre de dor articular ou mobilidade reduzida, recomendo este método."
+                  "Analisei inúmeros protocolos para densidade óssea e o <strong>Protocolo Anti-Células Zumbis é único.</strong> Se você sofre de perda óssea ou desconforto articular, recomendo este protocolo."
                 </p>
                 <p className="font-bold text-blue-900 flex items-center justify-center sm:justify-start text-sm sm:text-base">
                   <Award className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  Dr. Jonathan Pierce, MD, PhD<br className="sm:hidden" />
-                  <span className="hidden sm:inline"> - Especialista Ortopédico</span>
+                  Dra. Marina Santos, PhD, MSM
                 </p>
               </div>
             </div>
           </div>
 
+          {/* MUDANÇA 7: SEÇÃO "POR QUE DIFERENTES" */}
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words text-center">
+            Por Que Essas 8 Técnicas São Diferentes (Finalmente)
+          </h2>
+
+          <div className="bg-blue-50 rounded-lg p-6 sm:p-8 my-8 sm:my-10 space-y-6">
+            <div className="bg-white rounded-lg p-4 sm:p-6 border-l-4 border-red-600">
+              <p className="mb-3">
+                <strong>Você já tentou:</strong>
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-start">
+                  <span className="text-red-600 font-bold mr-2">❌</span>
+                  <span className="text-sm sm:text-base">Cálcio (não absorve)</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-red-600 font-bold mr-2">❌</span>
+                  <span className="text-sm sm:text-base">Bifosfonatos (efeitos colaterais)</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-red-600 font-bold mr-2">❌</span>
+                  <span className="text-sm sm:text-base">Glucosamina (não funciona)</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-red-600 font-bold mr-2">❌</span>
+                  <span className="text-sm sm:text-base">Exercício genérico (não elimina célula zumbi)</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-lg p-4 sm:p-6 border-l-4 border-blue-600">
+              <p className="font-bold text-lg mb-3 break-words">
+                Tudo isso trata SINTOMAS. O Protocolo trata a CAUSA.
+              </p>
+              <p className="text-sm sm:text-base text-gray-700 break-words">
+                Você não está lutando contra a dor. Você está eliminando as células que criam a dor.
+              </p>
+            </div>
+
+            <div className="bg-green-100 rounded-lg p-4 sm:p-6 border-l-4 border-green-600">
+              <p className="font-bold text-lg mb-3 text-gray-900 break-words">
+                Por que as 8 técnicas funcionam onde outros falharam:
+              </p>
+              <ol className="space-y-2 text-sm sm:text-base">
+                <li><strong>1.</strong> Cada técnica ataca UMA FONTE específica de células zumbis</li>
+                <li><strong>2.</strong> Juntas, elas não deixam escapatória</li>
+                <li><strong>3.</strong> Seu corpo consegue regenerar (finalmente)</li>
+                <li><strong>4.</strong> Resultados começam na SEMANA 1, não meses depois</li>
+              </ol>
+            </div>
+
+            <div className="bg-yellow-100 rounded-lg p-4 sm:p-6 border-l-4 border-yellow-600">
+              <p className="font-bold text-lg break-words">
+                Você não está pagando por 'esperança'. Você está pagando por um PROTOCOLO CIENTÍFICO com 8 técnicas que funcionam de formas diferentes.
+              </p>
+            </div>
+          </div>
+
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
-            O Que Acontece Se Você Não Fizer Nada?
+            O que acontece se você não fizer nada?
           </h2>
 
           <figure className="my-6 sm:my-8 w-full">
             <div className="relative w-full h-[250px] sm:h-[350px] md:h-[400px] rounded-lg overflow-hidden bg-gray-200">
               <Image 
-                src={IMAGES.consequenciasCitocinas}
-                alt="Consequências das citocinas"
+                src={IMAGES.consequenciasInacao}
+                alt="Consequências da inação - Deterioração óssea progressiva"
                 fill
                 className="object-contain sm:object-cover"
                 unoptimized
@@ -594,114 +1132,130 @@ export default function JointReset() {
               />
             </div>
             <figcaption className="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-3 italic px-2 sm:px-0">
-              Progressão da deterioração articular sem tratamento.
+              Progressão da deterioração óssea quando não tratada adequadamente. Ilustração: Pesquisa Científica
             </figcaption>
           </figure>
 
           <p className="text-lg sm:text-xl mb-4 sm:mb-6 break-words">
-            O que hoje parece <strong>"apenas uma pequena dor"...</strong> pode se transformar em uma <strong className="text-red-700">deterioração que mudará sua vida para sempre.</strong>
+            O que hoje parece <strong>"apenas uma pequena dor"...</strong> pode se transformar em uma <strong className="text-red-700">fratura que mudará sua vida amanhã.</strong>
           </p>
 
           <div className="bg-red-50 border-l-4 border-red-600 pl-4 sm:pl-6 py-4 sm:py-6 my-6 sm:my-8 rounded-r-lg">
             <p className="mb-3 sm:mb-4 text-sm sm:text-base">
-              As citocinas continuam atacando silenciosamente. Seus ossos ficam mais finos. Suas articulações ficam mais frágeis.
+              Imagine uma rachadura na fundação da sua casa. Com o tempo, se espalha, enfraquecendo toda a estrutura até que cause o colapso.
             </p>
             <p className="font-bold text-lg sm:text-xl">
-              Até que um dia, uma queda simples muda tudo.
+              É exatamente isso que está acontecendo dentro do seu corpo.
+            </p>
+          </div>
+
+          <ul className="space-y-2 sm:space-y-3 my-4 sm:my-6">
+            <li className="flex items-start">
+              <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 mr-2 sm:mr-3 flex-shrink-0 mt-1" />
+              <span className="text-sm sm:text-base break-words">Os ossos ficam mais finos e fracos</span>
+            </li>
+            <li className="flex items-start">
+              <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 mr-2 sm:mr-3 flex-shrink-0 mt-1" />
+              <span className="text-sm sm:text-base break-words">As articulações ficam inflamadas e quebradiças</span>
+            </li>
+            <li className="flex items-start">
+              <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 mr-2 sm:mr-3 flex-shrink-0 mt-1" />
+              <span className="text-sm sm:text-base break-words">Um movimento errado pode deixar você lesionada, imóvel ou pior</span>
+            </li>
+          </ul>
+
+          <p className="font-bold text-lg sm:text-xl text-center my-6 sm:my-8 break-words">
+            A diferença entre recuperar suas forças... e perdê-las para sempre... tudo se resume ao que você faz agora.
+          </p>
+
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
+            Por que você não encontrará o Protocolo em livrarias ou farmácias
+          </h2>
+
+          <p className="mb-4 sm:mb-6">
+            O Protocolo Anti-Células Zumbis está disponível <strong>apenas através desta página</strong> — e por um bom motivo.
+          </p>
+
+          <p className="mb-4 sm:mb-6">
+            Ao eliminar intermediários, garantimos que você tenha acesso direto às descobertas mais avançadas a um preço justo.
+          </p>
+
+          <div className="bg-purple-50 border-l-4 border-purple-600 pl-4 sm:pl-6 py-4 sm:py-6 my-6 sm:my-8 rounded-r-lg">
+            <p className="text-sm sm:text-base break-words">
+              Essa abordagem faz parte do compromisso de <strong>Elon Musk:</strong> tornar o suporte avançado para ossos e articulações <strong>acessível para quem mais precisa.</strong>
             </p>
           </div>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 text-center break-words">
-            Mas Não Precisa Ser Assim
+            E agora vem a melhor parte
           </h2>
 
-          <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-center break-words">
-            O preço original do Joint Reset é <span className="line-through text-red-600">`€299`</span>.
-          </p>
-
+          {/* MUDANÇA 8: SCARCITY MELHORADA */}
           <div className="bg-green-50 rounded-lg p-6 sm:p-8 my-8 sm:my-10 text-center">
+            <p className="text-lg sm:text-xl mb-4 sm:mb-6">
+              Embora o preço normal seja <span className="line-through text-red-600">€297</span>, agora mesmo você pode ter acesso por apenas <span className="line-through text-red-600">€197</span>.
+            </p>
+            
             <p className="text-lg sm:text-xl mb-4 sm:mb-6">
               Mas quando compartilhei minha história com a equipe, eles foram além.
             </p>
+
             <p className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 break-words">
-              Hoje, por tempo limitado, você pode acessar o Joint Reset por apenas:
+              Hoje, por tempo limitado, você pode experimentar o Protocolo Anti-Células Zumbis por apenas:
             </p>
             
             <div className="mb-6 sm:mb-8">
-              <div className="text-gray-400 text-lg sm:text-2xl line-through mb-2">`€299`</div>
-              <div className="text-6xl sm:text-7xl md:text-8xl font-bold text-green-600 mb-3 sm:mb-4">`€47`</div>
+              <div className="text-gray-400 text-lg sm:text-2xl line-through mb-2">€297</div>
+              <div className="text-gray-400 text-base sm:text-xl line-through mb-3 sm:mb-4">€197</div>
+              <div className="text-6xl sm:text-7xl md:text-8xl font-bold text-green-600 mb-3 sm:mb-4">€27</div>
               <div className="inline-block bg-yellow-400 text-gray-900 px-6 sm:px-8 py-2 sm:py-3 rounded-full text-lg sm:text-2xl font-bold mb-3 sm:mb-4">
-                Economia de `€252`!
+                🔥 Economia de €270!
               </div>
               <p className="text-gray-600 text-sm sm:text-base">
-                Com acesso digital imediato.
+                Um preço que o torna acessível para quem mais precisa.
               </p>
+
+              {/* MUDANÇA 8: SCARCITY COM VAGAS */}
+              <div className="mt-6 sm:mt-8 bg-red-100 border-2 border-red-400 rounded-lg p-4 sm:p-6">
+                <p className="font-bold text-red-800 mb-2">⏰ SCARCITY REAL - VAGAS LIMITADAS</p>
+                <p className="text-red-700 font-bold text-2xl mb-2">🛡️ {vagas} Vagas Restantes Nesta Semana</p>
+                <p className="text-sm text-red-700">Esta oferta expira em 48 horas</p>
+              </div>
             </div>
 
             <div className="bg-blue-100 border border-blue-300 rounded-lg p-4 sm:p-6">
               <p className="font-bold text-base sm:text-lg text-blue-900">
-                E você recebe 2 bônus gratuitos:
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 my-8 sm:my-10">
-            <div className="bg-gradient-to-br from-red-50 to-pink-50 rounded-lg p-6 sm:p-8 border border-red-200">
-              <div className="text-center mb-4 sm:mb-6">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                  <Activity className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-red-700 break-words">Bônus 1</h3>
-              </div>
-              <p className="font-bold text-center text-base sm:text-lg mb-3 sm:mb-4 break-words">
-                O Eliminador de Inflamação
-              </p>
-              <p className="text-center text-sm sm:text-base text-gray-700">
-                Guia completo para desativar citocinas através da alimentação. Valor: `€47`
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-6 sm:p-8 border border-blue-200">
-              <div className="text-center mb-4 sm:mb-6">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                  <Award className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-blue-700 break-words">Bônus 2</h3>
-              </div>
-              <p className="font-bold text-center text-base sm:text-lg mb-3 sm:mb-4 break-words">
-                7 Movimentos de Alongamento da Juventude
-              </p>
-              <p className="text-center text-sm sm:text-base text-gray-700">
-                Sequência de exercícios para reativar a mobilidade. Valor: `€37`
+                E você não precisa tomar uma decisão agora.
               </p>
             </div>
           </div>
 
           <div className="my-8 sm:my-12 text-center">
+            {/* MUDANÇA 9: CTA BUTTON OTIMIZADO */}
             <Button 
               onClick={handleCTA}
-              className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold text-base sm:text-lg md:text-xl py-6 sm:py-8 md:py-10 px-6 sm:px-12 md:px-20 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-105 break-words whitespace-normal leading-tight min-h-[80px] sm:min-h-[100px] flex items-center justify-center"
+              className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold text-base sm:text-lg md:text-xl py-4 sm:py-6 md:py-8 px-4 sm:px-8 md:px-16 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-105 break-words whitespace-normal leading-tight min-h-[60px] sm:min-h-[80px] flex items-center justify-center"
             >
               <span className="text-center block leading-tight">
-                ✅ OBTER ACESSO AGORA POR `€47`<br className="sm:hidden" />
-                <span className="hidden sm:inline"> - </span>Inclui 2 Bônus Gratuitos
-                <ArrowRight className="ml-2 w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 inline-block align-middle" />
+                SIM, QUERO ACESSAR AS 8 TÉCNICAS AGORA
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 inline-block align-middle" />
               </span>
             </Button>
             <p className="text-xs sm:text-sm text-gray-500 mt-3 sm:mt-4">
-              🔒 Pagamento 100% Seguro • ⚡ Acesso Imediato • 🛡️ Garantia de 60 Dias
+              🔒 Pagamento 100% Seguro • ⚡ Acesso Imediato • 🛡️ Garantia de 30 Dias
             </p>
           </div>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 text-center break-words">
-            Garantia de 60 Dias, Sem Perguntas
+            Garantia Progressiva de 30 Dias, Sem Perguntas
           </h2>
 
+          {/* MUDANÇA 11: GARANTIA PROGRESSIVA */}
           <figure className="my-6 sm:my-8 w-full">
             <div className="relative w-full h-[250px] sm:h-[350px] md:h-[400px] rounded-lg overflow-hidden bg-gray-200">
               <Image 
-                src={IMAGES.garantiaSatisfacao}
-                alt="Garantia de satisfação"
+                src={IMAGES.garantiaSeguranca}
+                alt="Garantia de segurança e satisfação"
                 fill
                 className="object-contain sm:object-cover"
                 unoptimized
@@ -709,7 +1263,7 @@ export default function JointReset() {
               />
             </div>
             <figcaption className="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-3 italic px-2 sm:px-0">
-              Sua satisfação é garantida ou seu dinheiro de volta.
+              Proteção total com garantia incondicional de satisfação. Foto: Divulgação
             </figcaption>
           </figure>
 
@@ -717,11 +1271,28 @@ export default function JointReset() {
             <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8">
               <Shield className="w-20 h-20 sm:w-32 sm:h-32 text-green-600 flex-shrink-0" />
               <div>
-                <p className="text-lg sm:text-xl mb-3 sm:mb-4 break-words">
-                  Experimente o Joint Reset por <strong>60 dias completos.</strong> São dois meses inteiros para sentir a diferença em suas articulações e mobilidade.
-                </p>
                 <p className="text-lg sm:text-xl mb-4 sm:mb-6 break-words">
-                  Se você não ficar totalmente satisfeito, você receberá <strong className="text-green-700">100% do seu dinheiro de volta.</strong>
+                  <strong>Experimente o Protocolo por 30 dias completos.</strong> São 30 dias para sentir a diferença em seus ossos, articulações e no seu dia a dia.
+                </p>
+
+                {/* MUDANÇA 11: GARANTIA COM MARCOS */}
+                <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+                  <div className="bg-white rounded-lg p-3 sm:p-4 border-l-4 border-red-600">
+                    <p className="font-bold text-red-800 text-sm sm:text-base">✓ Semana 1</p>
+                    <p className="text-xs sm:text-sm text-gray-700">Se não notar redução de dor/rigidez → Reembolso total</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 sm:p-4 border-l-4 border-yellow-600">
+                    <p className="font-bold text-yellow-800 text-sm sm:text-base">✓ Semana 2</p>
+                    <p className="text-xs sm:text-sm text-gray-700">Se não notar movimento mais fluido → Reembolso total</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 sm:p-4 border-l-4 border-green-600">
+                    <p className="font-bold text-green-800 text-sm sm:text-base">✓ Semana 4</p>
+                    <p className="text-xs sm:text-sm text-gray-700">Se não notar regeneração começando → Reembolso total</p>
+                  </div>
+                </div>
+
+                <p className="text-lg sm:text-xl mb-4 sm:mb-6 break-words">
+                  Você tem <strong className="text-green-700">30 dias para confirmar que as 8 técnicas funcionam.</strong> Se não funcionar EM QUALQUER PONTO, seu dinheiro volta.
                 </p>
                 
                 <div className="grid grid-cols-3 gap-3 sm:gap-4">
@@ -740,7 +1311,7 @@ export default function JointReset() {
                 </div>
 
                 <div className="bg-yellow-100 border border-yellow-400 rounded-lg p-3 sm:p-4 mt-4 sm:mt-6 text-center">
-                  <p className="font-bold text-base sm:text-lg break-words">Por que eles fariam isso?</p>
+                  <p className="font-bold text-base sm:text-lg text-yellow-900 break-words">Por que eles fariam isso?</p>
                   <p className="text-xl sm:text-2xl font-bold text-yellow-800 mt-2 break-words">Porque sabem que funciona.</p>
                 </div>
               </div>
@@ -751,46 +1322,51 @@ export default function JointReset() {
             <div className="text-center mb-4 sm:mb-6">
               <AlertTriangle className="w-12 h-12 sm:w-16 sm:h-16 text-red-600 mx-auto mb-3 sm:mb-4" />
               <h3 className="text-2xl sm:text-3xl font-bold text-red-700 mb-3 sm:mb-4 break-words">
-                ⚠️ ATENÇÃO: Esta Oferta Pode Acabar!
+                ⚠️ ATENÇÃO: Esta oferta pode estar indisponível quando você voltar!
               </h3>
             </div>
 
+            <p className="text-lg sm:text-xl text-center mb-4 sm:mb-6 break-words">
+              O Protocolo já ficou indisponível diversas vezes devido à <strong>enorme procura.</strong>
+            </p>
+
             <p className="text-lg sm:text-xl text-center mb-6 sm:mb-8 break-words">
-              O Joint Reset já ficou indisponível diversas vezes devido à enorme procura.
+              Se você está interessada em reconstruir seus ossos e recuperar sua independência, <strong className="text-red-700">agora é a hora de agir.</strong>
             </p>
 
             <figure className="my-6 sm:my-8 w-full">
               <div className="relative w-full h-[200px] sm:h-[300px] md:h-[350px] rounded-lg overflow-hidden bg-gray-200">
                 <Image 
-                  src={IMAGES.ativarRegeneracao}
-                  alt="Ativar regeneração agora"
+                  src={IMAGES.agiAgora}
+                  alt="Hora de agir - Não perca esta oportunidade"
                   fill
                   className="object-contain sm:object-cover"
                   unoptimized
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
                 />
               </div>
+              <figcaption className="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-3 italic px-2 sm:px-0">
+                O momento certo para reconstruir sua saúde óssea é agora. Foto: Divulgação
+              </figcaption>
             </figure>
-
-            <p className="text-lg sm:text-xl text-center mb-6 sm:mb-8 break-words">
-              Se você está interessado em recuperar sua mobilidade e independência, <strong className="text-red-700">agora é a hora de agir.</strong>
-            </p>
 
             <div className="text-center">
               <Button 
                 onClick={handleCTA}
-                className="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white font-bold text-base sm:text-lg md:text-xl py-6 sm:py-8 md:py-10 px-6 sm:px-12 md:px-20 rounded-full shadow-2xl animate-pulse break-words whitespace-normal leading-tight min-h-[80px] sm:min-h-[100px] flex items-center justify-center"
+                className="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white font-bold text-base sm:text-lg md:text-xl py-4 sm:py-6 md:py-8 px-4 sm:px-8 md:px-16 rounded-full shadow-2xl animate-pulse break-words whitespace-normal leading-tight min-h-[60px] sm:min-h-[80px] flex items-center justify-center"
               >
                 <span className="text-center block leading-tight">
-                  🚨 GARANTIR MEU ACESSO AGORA
+                  🚨 GARANTIR MINHA VAGA AGORA
                 </span>
               </Button>
             </div>
           </div>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 text-center break-words">
-            Você Tem Duas Opções
+            O verdadeiro risco? Viver com dor e arrependimento.
           </h2>
+
+          <p className="text-lg sm:text-xl text-center mb-6 sm:mb-8 break-words">Você tem duas opções:</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 my-8 sm:my-10">
             <div className="bg-red-50 border-2 border-red-400 rounded-lg p-6 sm:p-8">
@@ -798,24 +1374,24 @@ export default function JointReset() {
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                   <span className="text-white text-2xl sm:text-3xl font-bold">✗</span>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-red-700 break-words">Opção 1: Não Fazer Nada</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-red-700 break-words">Opção 1: Não fazer nada</h3>
               </div>
               <ul className="space-y-2 sm:space-y-3">
                 <li className="flex items-start">
                   <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 mr-2 flex-shrink-0 mt-1" />
-                  <span className="text-sm sm:text-base break-words">As citocinas continuarão atacando</span>
+                  <span className="text-sm sm:text-base break-words">Ossos continuarão mais finos</span>
                 </li>
                 <li className="flex items-start">
                   <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 mr-2 flex-shrink-0 mt-1" />
-                  <span className="text-sm sm:text-base break-words">Suas articulações ficarão mais frágeis</span>
+                  <span className="text-sm sm:text-base break-words">Articulações mais rígidas</span>
                 </li>
                 <li className="flex items-start">
                   <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 mr-2 flex-shrink-0 mt-1" />
-                  <span className="text-sm sm:text-base break-words">Seu mundo continuará encolhendo</span>
+                  <span className="text-sm sm:text-base break-words">Mundo cada vez menor</span>
                 </li>
                 <li className="flex items-start">
                   <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 mr-2 flex-shrink-0 mt-1" />
-                  <span className="text-sm sm:text-base break-words">Até você lamentar não ter agido</span>
+                  <span className="text-sm sm:text-base break-words">Até você se perguntar: "Como cheguei a isso?"</span>
                 </li>
               </ul>
             </div>
@@ -825,7 +1401,7 @@ export default function JointReset() {
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                   <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-green-700 break-words">Opção 2: Experimentar o Joint Reset</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-green-700 break-words">Opção 2: Dar uma chance ao Protocolo</h3>
               </div>
               <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                 <li className="flex items-start">
@@ -834,11 +1410,11 @@ export default function JointReset() {
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0 mt-1" />
-                  <span className="text-sm sm:text-base break-words">Articulações suaves e flexíveis</span>
+                  <span className="text-sm sm:text-base break-words">Ossos mais fortes</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0 mt-1" />
-                  <span className="text-sm sm:text-base break-words">Recuperar a liberdade de movimento</span>
+                  <span className="text-sm sm:text-base break-words">Articulações revitalizadas</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0 mt-1" />
@@ -851,85 +1427,32 @@ export default function JointReset() {
             </div>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
-            Perguntas Frequentes
-          </h2>
-
-          <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">
-            <AccordionItem value="item-1" className="bg-gray-50 border border-gray-200 rounded-lg px-4 sm:px-6">
-              <AccordionTrigger className="text-gray-900 hover:text-blue-700 font-bold text-sm sm:text-base break-words">
-                Funciona se minha cartilagem está desgastada?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-700 pb-4 text-sm sm:text-base break-words">
-                Sim, a cartilagem se regenera quando as citocinas são desativadas. Estudos mostram que a reparação cartilaginosa é possível em qualquer idade quando o ambiente inflamatório é reduzido.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-2" className="bg-gray-50 border border-gray-200 rounded-lg px-4 sm:px-6">
-              <AccordionTrigger className="text-gray-900 hover:text-blue-700 font-bold text-sm sm:text-base break-words">
-                Ajuda em lesões antigas?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-700 pb-4 text-sm sm:text-base break-words">
-                Sim, o método alivia nervos e melhora a mobilidade mesmo em lesões antigas. A chave é reativar o sistema natural de reparação do corpo.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-3" className="bg-gray-50 border border-gray-200 rounded-lg px-4 sm:px-6">
-              <AccordionTrigger className="text-gray-900 hover:text-blue-700 font-bold text-sm sm:text-base break-words">
-                Ajuda em hérnias de disco?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-700 pb-4 text-sm sm:text-base break-words">
-                Sim, a sequência vertebral hidrata os discos e reduz pressão. Muitos usuários relatam alívio significativo de dor nas costas.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-4" className="bg-gray-50 border border-gray-200 rounded-lg px-4 sm:px-6">
-              <AccordionTrigger className="text-gray-900 hover:text-blue-700 font-bold text-sm sm:text-base break-words">
-                É seguro?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-700 pb-4 text-sm sm:text-base break-words">
-                Sim, é natural, suave e cientificamente comprovado. Não há medicamentos, injeções ou cirurgias. Sempre consulte seu médico se tiver condições específicas.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-5" className="bg-gray-50 border border-gray-200 rounded-lg px-4 sm:px-6">
-              <AccordionTrigger className="text-gray-900 hover:text-blue-700 font-bold text-sm sm:text-base break-words">
-                Com que rapidez você sente resultados?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-700 pb-4 text-sm sm:text-base break-words">
-                Alguns sentem alívio em poucos dias; regeneração mais profunda leva 4 a 8 semanas. Resultados variam de pessoa para pessoa.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-6" className="bg-gray-50 border border-gray-200 rounded-lg px-4 sm:px-6">
-              <AccordionTrigger className="text-gray-900 hover:text-blue-700 font-bold text-sm sm:text-base break-words">
-                Como recebo o acesso?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-700 pb-4 text-sm sm:text-base break-words">
-                O acesso é imediato! Após a confirmação do pagamento, você receberá um email com link para baixar o eBook Joint Reset completo.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-7" className="bg-gray-50 border border-gray-200 rounded-lg px-4 sm:px-6">
-              <AccordionTrigger className="text-gray-900 hover:text-blue-700 font-bold text-sm sm:text-base break-words">
-                Preciso de suplementos caros?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-700 pb-4 text-sm sm:text-base break-words">
-                Não! O método usa alimentos comuns, técnicas naturais e nenhuma suplementação cara. Tudo pode ser feito com ingredientes que você provavelmente já tem.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <div className="bg-yellow-50 border-l-4 border-yellow-600 pl-4 sm:pl-6 py-4 sm:py-6 my-8 sm:my-10 rounded-r-lg">
+            <p className="text-lg sm:text-xl mb-3 sm:mb-4">
+              Ainda agradeço a Deus todos os dias por ter encontrado este protocolo.
+            </p>
+            <p className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 break-words">
+              Não mudou apenas o meu corpo — mudou o meu futuro.
+            </p>
+            <p className="text-lg sm:text-xl mb-3 sm:mb-4">
+              Você quer continuar presa à dor e mobilidade reduzida?
+            </p>
+            <p className="text-xl sm:text-2xl font-bold text-yellow-800 break-words">
+              Ou quer uma chance real de conquistar a força e confiança que merece?
+            </p>
+          </div>
 
           <div className="my-8 sm:my-12 text-center bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-6 sm:p-10">
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 break-words">
-              Sua Vida Pode Mudar Começando Hoje
+              Esta pode ser a decisão que divide sua vida em "antes" e "depois"
             </h3>
             
             <div className="mb-6 sm:mb-8">
-              <div className="text-gray-400 text-lg sm:text-2xl line-through mb-2">`€299`</div>
-              <div className="text-6xl sm:text-7xl md:text-8xl font-bold text-green-600 mb-3 sm:mb-4">`€47`</div>
+              <div className="text-gray-400 text-lg sm:text-2xl line-through mb-2">€297</div>
+              <div className="text-gray-400 text-base sm:text-xl line-through mb-3 sm:mb-4">€197</div>
+              <div className="text-6xl sm:text-7xl md:text-8xl font-bold text-green-600 mb-3 sm:mb-4">€27</div>
               <p className="text-xl sm:text-2xl font-bold text-yellow-700 mb-4 sm:mb-6">
-                🔥 Economia de `€252` Hoje!
+                🔥 ECONOMIA DE €270 HOJE!
               </p>
             </div>
 
@@ -938,16 +1461,98 @@ export default function JointReset() {
               className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold text-base sm:text-lg md:text-xl py-6 sm:py-8 md:py-10 px-6 sm:px-12 md:px-20 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-105 break-words whitespace-normal leading-tight min-h-[80px] sm:min-h-[100px] flex items-center justify-center"
             >
               <span className="text-center block leading-tight">
-                ✅ OBTER O JOINT RESET AGORA<br className="sm:hidden" />
-                <span className="hidden sm:inline"> - </span>`€47` + 2 Bônus Grátis
+                🛡️ RECUPERAR MINHA MOBILIDADE - COMECE SEMANA 1
                 <ArrowRight className="ml-2 w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 inline-block align-middle" />
               </span>
             </Button>
 
             <p className="text-gray-600 mt-4 sm:mt-6 text-sm sm:text-base">
-              🔒 Pagamento Seguro • ⚡ Acesso Imediato • 🛡️ Garantia Incondicional de 60 Dias
+              🔒 Pagamento Seguro • ⚡ Acesso Imediato • 🛡️ Garantia Incondicional de 30 Dias
             </p>
           </div>
+
+          {/* MUDANÇA 10: FAQ EXPANDIDO COM NOVAS PERGUNTAS */}
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
+            Perguntas Frequentes
+          </h2>
+
+          <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">
+            <AccordionItem value="item-1" className="bg-gray-50 border border-gray-200 rounded-lg px-4 sm:px-6">
+              <AccordionTrigger className="text-gray-900 hover:text-blue-700 font-bold text-sm sm:text-base break-words">
+                Preciso fazer as 8 técnicas ou posso começar com menos?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-700 pb-4 text-sm sm:text-base break-words">
+                Você pode começar com as 3 técnicas principais (Técnicas 1, 3, 4 = ~10 minutos). Muitas pessoas notam resultados na primeira semana com apenas essas 3.
+
+                Mas para máxima eliminação de células zumbis, as 8 técnicas trabalham juntas. Pessoas que fazem as 8 veem resultados 3x mais rápido.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="bg-gray-50 border border-gray-200 rounded-lg px-4 sm:px-6">
+              <AccordionTrigger className="text-gray-900 hover:text-blue-700 font-bold text-sm sm:text-base break-words">
+                Qual técnica eu devo fazer PRIMEIRO?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-700 pb-4 text-sm sm:text-base break-words">
+                A Técnica 1 (Rotina de 7 Minutos). Ela bloqueia as citocinas inflamatórias. Sem esse bloqueio inicial, as outras técnicas têm efetividade reduzida.
+
+                Depois da Técnica 1, você adiciona as outras gradualmente.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="bg-gray-50 border border-gray-200 rounded-lg px-4 sm:px-6">
+              <AccordionTrigger className="text-gray-900 hover:text-blue-700 font-bold text-sm sm:text-base break-words">
+                O Protocolo funciona para todos?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-700 pb-4 text-sm sm:text-base break-words">
+                O Protocolo foi desenvolvido especialmente para adultos acima de 50 anos que sofrem com perda óssea e desconforto articular. Funciona particularmente bem para pessoas que ainda sentem sintomas (dor, rigidez), pois isso indica que o corpo ainda está tentando se recuperar.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="bg-gray-50 border border-gray-200 rounded-lg px-4 sm:px-6">
+              <AccordionTrigger className="text-gray-900 hover:text-blue-700 font-bold text-sm sm:text-base break-words">
+                Quanto tempo leva para ver resultados?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-700 pb-4 text-sm sm:text-base break-words">
+                A maioria das pessoas nota mudanças sutis nas primeiras semanas (mais energia, melhor sono, menos rigidez matinal). Resultados mais significativos aparecem entre 30-60 dias de uso consistente do protocolo.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5" className="bg-gray-50 border border-gray-200 rounded-lg px-4 sm:px-6">
+              <AccordionTrigger className="text-gray-900 hover:text-blue-700 font-bold text-sm sm:text-base break-words">
+                É seguro usar junto com medicamentos?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-700 pb-4 text-sm sm:text-base break-words">
+                O Protocolo é baseado em técnicas naturais e alimentares. No entanto, sempre recomendamos consultar seu médico antes de iniciar qualquer novo protocolo de saúde, especialmente se você já usa medicamentos.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-6" className="bg-gray-50 border border-gray-200 rounded-lg px-4 sm:px-6">
+              <AccordionTrigger className="text-gray-900 hover:text-blue-700 font-bold text-sm sm:text-base break-words">
+                E se o Protocolo não funcionar para mim?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-700 pb-4 text-sm sm:text-base break-words">
+                Você tem 30 dias completos para experimentar o Protocolo sem riscos. Se não ficar satisfeita em qualquer ponto, basta solicitar o reembolso total — sem perguntas, sem complicações.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-7" className="bg-gray-50 border border-gray-200 rounded-lg px-4 sm:px-6">
+              <AccordionTrigger className="text-gray-900 hover:text-blue-700 font-bold text-sm sm:text-base break-words">
+                Como recebo o Protocolo após a compra?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-700 pb-4 text-sm sm:text-base break-words">
+                O acesso é imediato! Após a confirmação do pagamento, você receberá um email com as instruções de acesso completo ao Protocolo. Você pode começar a aplicá-lo no mesmo dia.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-8" className="bg-gray-50 border border-gray-200 rounded-lg px-4 sm:px-6">
+              <AccordionTrigger className="text-gray-900 hover:text-blue-700 font-bold text-sm sm:text-base break-words">
+                Preciso comprar suplementos caros?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-700 pb-4 text-sm sm:text-base break-words">
+                Não! O Protocolo se concentra em técnicas naturais, exposição solar estratégica, combinações alimentares específicas e protocolos baseados em alimentos comuns. Não exige suplementos caros ou difíceis de encontrar.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
 
         </div>
       </article>
@@ -965,7 +1570,7 @@ export default function JointReset() {
 
           <div className="text-center text-gray-600 text-xs leading-relaxed space-y-3 sm:space-y-4 break-words">
             <p>
-              © 2024 Método Joint Reset. Todos os direitos reservados.
+              © 2024 Protocolo de Regeneração Óssea Anti-Células Zumbis. Todos os direitos reservados.
             </p>
             <p>
               Este produto não garante a obtenção de resultados. Qualquer referência ao desempenho de uma estratégia não deve ser interpretada como uma garantia de resultados. Os resultados podem variar de pessoa para pessoa.
