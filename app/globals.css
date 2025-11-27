@@ -1,0 +1,945 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+
+  /* ✅ VARIÁVEIS CUSTOMIZADAS PARA UPSELL */
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gold-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --success-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --danger-gradient: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  --purple-gradient: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+  --blue-gradient: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-hover: rgba(255, 255, 255, 0.15);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans), system-ui, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ✅ COMPONENTES ESPECÍFICOS DO UPSELL */
+@layer components {
+  
+  /* ✅ HEADLINES UPSELL OTIMIZADAS */
+  .headline-mobile {
+    font-size: clamp(1.4rem, 4.5vw, 2.2rem);
+    line-height: 1.2;
+    font-weight: 800;
+    text-align: center;
+    color: white;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, #fbbf24 50%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .headline-mobile span {
+    display: block;
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    line-height: 1.3;
+    margin-top: 0.75rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subtitle-mobile {
+    font-size: clamp(0.9rem, 2.8vw, 1.1rem);
+    line-height: 1.4;
+    text-align: center;
+    color: rgb(203 213 225);
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+    font-weight: 500;
+  }
+
+  .section-title-mobile {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    line-height: 1.2;
+    font-weight: 700;
+    text-align: center;
+    color: white;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  /* ✅ GLASS HERO UPSELL */
+  .glass-hero {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    padding: 2rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glass-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: shine-hero 4s infinite;
+  }
+
+  @keyframes shine-hero {
+    0% { left: -100%; }
+    20% { left: 100%; }
+    100% { left: 100%; }
+  }
+
+  .glass-card-mobile {
+    background: rgba(255, 255, 255, 0.06) !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glass-card-mobile:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  /* ✅ FADE IN UPSELL SUAVE */
+  .fade-in-mobile {
+    animation: fadeInUp 1s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ✅ BOTÃO CTA UPSELL DEVASTADOR */
+  .btn-primary-mobile {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    position: relative;
+    z-index: 999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    background: var(--danger-gradient) !important;
+    color: #ffffff !important;
+    border: none;
+    padding: 18px 36px;
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.5);
+    overflow: hidden;
+    width: 100%;
+    max-width: 420px;
+    min-height: 60px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    animation: pulse-cta 3s infinite;
+  }
+
+  @keyframes pulse-cta {
+    0%, 100% { 
+      box-shadow: 0 10px 30px rgba(220, 38, 38, 0.5);
+      transform: scale(1);
+    }
+    50% { 
+      box-shadow: 0 15px 40px rgba(220, 38, 38, 0.7);
+      transform: scale(1.02);
+    }
+  }
+
+  .btn-primary-mobile * {
+    color: #ffffff !important;
+  }
+
+  .btn-primary-mobile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shine-cta 2s infinite;
+  }
+
+  @keyframes shine-cta {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+  }
+
+  .btn-primary-mobile:hover {
+    background: linear-gradient(135deg, #b91c1c, #7f1d1d) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(220, 38, 38, 0.6);
+  }
+
+  .btn-primary-mobile:active {
+    transform: translateY(0);
+  }
+
+  .btn-primary-mobile:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    animation: none;
+  }
+  
+  .btn-primary-mobile:focus-visible {
+    outline: 3px solid #dc2626;
+    outline-offset: 2px;
+  }
+
+  /* ✅ TIMER UPSELL CRÍTICO */
+  .timer-compact {
+    background: rgba(239, 68, 68, 0.2);
+    border: 2px solid rgba(239, 68, 68, 0.6);
+    border-radius: 16px;
+    padding: 16px 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    animation: pulse-timer 2s infinite;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .timer-compact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.3), transparent);
+    animation: shine-timer 3s infinite;
+  }
+
+  @keyframes shine-timer {
+    0% { left: -100%; }
+    33% { left: 100%; }
+    100% { left: 100%; }
+  }
+
+  @keyframes pulse-timer {
+    0%, 100% { 
+      box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+      border-color: rgba(239, 68, 68, 0.6);
+    }
+    50% { 
+      box-shadow: 0 0 35px rgba(239, 68, 68, 0.6);
+      border-color: rgba(239, 68, 68, 0.8);
+    }
+  }
+
+  .timer-digit-small {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: 900;
+    color: #fca5a5;
+    text-shadow: 0 0 15px rgba(239, 68, 68, 0.8);
+    position: relative;
+    z-index: 10;
+  }
+
+  /* ✅ BADGES DE PROVA SOCIAL UPSELL */
+  .social-proof-badge {
+    background: rgba(16, 185, 129, 0.2) !important;
+    border: 1px solid rgba(16, 185, 129, 0.5) !important;
+    border-radius: 50px;
+    padding: 10px 18px;
+    font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+    font-weight: 600;
+    color: #34d399 !important;
+    backdrop-filter: blur(10px);
+    animation: float-gentle 4s ease-in-out infinite;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+  }
+
+  @keyframes float-gentle {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-4px); }
+  }
+
+  /* ✅ SEÇÃO DE PREÇO UPSELL DEVASTADORA */
+  .price-section-mobile {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    border-radius: 25px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(251, 191, 36, 0.3);
+  }
+
+  .price-section-mobile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.1), transparent);
+    animation: shine-price 4s infinite;
+  }
+
+  @keyframes shine-price {
+    0% { left: -100%; }
+    25% { left: 100%; }
+    100% { left: 100%; }
+  }
+
+  .price-old-mobile {
+    font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+    text-decoration: line-through;
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .price-new-mobile {
+    font-size: clamp(3.5rem, 12vw, 5rem);
+    font-weight: 900;
+    background: var(--danger-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    line-height: 1;
+    text-shadow: 0 4px 8px rgba(220, 38, 38, 0.3);
+    animation: price-glow 3s infinite;
+  }
+
+  @keyframes price-glow {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.2); }
+  }
+
+  /* ✅ CARDS DE COMPARAÇÃO BRUTAL */
+  .comparison-card-danger {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.05)) !important;
+    border: 2px solid #ef4444 !important;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .comparison-card-danger::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ef4444, #dc2626);
+    animation: danger-pulse 2s infinite;
+  }
+
+  @keyframes danger-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+
+  .comparison-card-success {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.05)) !important;
+    border: 2px solid #10b981 !important;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .comparison-card-success::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #10b981, #059669);
+    animation: success-glow 2s infinite;
+  }
+
+  @keyframes success-glow {
+    0%, 100% { 
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+    }
+    50% { 
+      box-shadow: 0 0 25px rgba(16, 185, 129, 0.5);
+    }
+  }
+
+  /* ✅ TESTIMONIAL DEVASTADOR */
+  .testimonial-devastador {
+    background: rgba(59, 130, 246, 0.1) !important;
+    border-left: 6px solid #3b82f6 !important;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonial-devastador::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    animation: shine-testimonial 5s infinite;
+  }
+
+  @keyframes shine-testimonial {
+    0% { left: -100%; }
+    20% { left: 100%; }
+    100% { left: 100%; }
+  }
+
+  /* ✅ MÓDULOS DO PROTOCOLO */
+  .module-card {
+    background: rgba(124, 58, 237, 0.1) !important;
+    border: 1px solid rgba(124, 58, 237, 0.3) !important;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .module-card:hover {
+    background: rgba(124, 58, 237, 0.15) !important;
+    border-color: rgba(124, 58, 237, 0.5) !important;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(124, 58, 237, 0.2);
+  }
+
+  .module-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--purple-gradient);
+  }
+
+  /* ✅ URGÊNCIA CRÍTICA */
+  .urgency-critical {
+    background: rgba(239, 68, 68, 0.15) !important;
+    border: 3px solid #ef4444 !important;
+    animation: urgency-pulse 1.5s infinite;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .urgency-critical::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.3), transparent);
+    animation: shine-urgency 2s infinite;
+  }
+
+  @keyframes shine-urgency {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+  }
+
+  @keyframes urgency-pulse {
+    0%, 100% { 
+      border-color: #ef4444;
+      box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+    }
+    50% { 
+      border-color: #dc2626;
+      box-shadow: 0 0 35px rgba(239, 68, 68, 0.6);
+    }
+  }
+
+  /* ✅ LOADING SPINNER UPSELL */
+  .loading-dots {
+    display: inline-flex;
+    gap: 5px;
+    margin-left: 10px;
+  }
+
+  .loading-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #ffffff;
+    animation: loading-bounce 1.4s infinite ease-in-out both;
+  }
+
+  .loading-dot:nth-child(1) { animation-delay: -0.32s; }
+  .loading-dot:nth-child(2) { animation-delay: -0.16s; }
+  .loading-dot:nth-child(3) { animation-delay: 0s; }
+
+  @keyframes loading-bounce {
+    0%, 80%, 100% { 
+      transform: scale(0.8); 
+      opacity: 0.5; 
+    }
+    40% { 
+      transform: scale(1.2); 
+      opacity: 1; 
+    }
+  }
+
+  /* ✅ STATS DEVASTADORES */
+  .stat-devastador {
+    background: rgba(220, 38, 38, 0.1) !important;
+    border: 2px solid #dc2626 !important;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-devastador::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.2), transparent);
+    animation: shine-stat 3s infinite;
+  }
+
+  @keyframes shine-stat {
+    0% { left: -100%; }
+    33% { left: 100%; }
+    100% { left: 100%; }
+  }
+
+  .stat-number {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 900;
+    background: var(--danger-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 8px rgba(220, 38, 38, 0.3);
+    animation: number-glow 2s infinite;
+  }
+
+  @keyframes number-glow {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.3); }
+  }
+
+  /* ✅ GARANTIA SHIELD */
+  .guarantee-shield {
+    background: rgba(16, 185, 129, 0.1) !important;
+    border: 2px solid #10b981 !important;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .guarantee-shield::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.2), transparent);
+    animation: shine-guarantee 4s infinite;
+  }
+
+  @keyframes shine-guarantee {
+    0% { left: -100%; }
+    25% { left: 100%; }
+    100% { left: 100%; }
+  }
+
+  /* ✅ PERFORMANCE OPTIMIZATIONS */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+
+  /* ✅ HOVER EFFECTS AVANÇADOS */
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  }
+
+  /* ✅ ACCORDION CUSTOMIZADO */
+  .accordion-trigger-custom {
+    transition: all 0.3s ease;
+  }
+
+  .accordion-trigger-custom:hover {
+    background: rgba(251, 191, 36, 0.1) !important;
+    color: #fbbf24 !important;
+  }
+
+  .accordion-content-custom {
+    background: rgba(255, 255, 255, 0.02) !important;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ✅ RESPONSIVIDADE ESPECÍFICA PARA UPSELL */
+@media (max-width: 640px) {
+  .headline-mobile {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .headline-mobile span {
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+  }
+  
+  .subtitle-mobile {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .section-title-mobile {
+    font-size: 1.4rem;
+  }
+  
+  .glass-hero {
+    padding: 1.5rem 1rem;
+    margin: 0.5rem;
+  }
+
+  .btn-primary-mobile {
+    padding: 16px 28px;
+    font-size: 0.95rem;
+    min-height: 56px;
+  }
+
+  .price-new-mobile {
+    font-size: 3rem;
+  }
+
+  .timer-digit-small {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .glass-hero {
+    padding: 1.25rem 0.75rem;
+    margin: 0.25rem;
+  }
+  
+  .btn-primary-mobile {
+    padding: 14px 24px;
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+  
+  .price-section-mobile {
+    padding: 2rem 1.5rem;
+  }
+
+  .timer-compact {
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .headline-mobile {
+    font-size: 1.1rem;
+  }
+  
+  .subtitle-mobile {
+    font-size: 0.8rem;
+  }
+  
+  .price-new-mobile {
+    font-size: 2.5rem;
+  }
+
+  .social-proof-badge {
+    padding: 8px 14px;
+    font-size: 0.7rem;
+  }
+}
+
+/* ✅ MELHORIAS DE ACESSIBILIDADE */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ✅ MODO ESCURO MELHORADO */
+@media (prefers-color-scheme: dark) {
+  .subtitle-mobile {
+    color: #f1f5f9;
+  }
+}
+
+/* ✅ CORREÇÃO FINAL PARA DUPLO TOQUE */
+.btn-primary-mobile {
+  -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+  tap-highlight-color: rgba(0,0,0,0) !important;
+  cursor: pointer !important;
+  touch-action: manipulation !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+}
+
+.btn-primary-mobile:hover,
+.btn-primary-mobile:focus,
+.btn-primary-mobile:active {
+  outline: none !important;
+  -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .btn-primary-mobile {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+  }
+  
+  .btn-primary-mobile:hover {
+    transform: none;
+    background: var(--danger-gradient) !important;
+  }
+}
+
+/* ✅ ANIMAÇÕES ESPECIAIS PARA ELEMENTOS CRÍTICOS */
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.1); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.1); }
+  70% { transform: scale(1); }
+}
+
+.heartbeat {
+  animation: heartbeat 2s infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* ✅ EFEITOS DE BRILHO INTENSIFICADOS */
+@keyframes intense-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.4);
+    filter: brightness(1);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(220, 38, 38, 0.8);
+    filter: brightness(1.2);
+  }
+}
+
+.intense-glow {
+  animation: intense-glow 2s infinite;
+}
+
+/* ✅ GRADIENTES ANIMADOS */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-gradient {
+  background: linear-gradient(-45deg, #dc2626, #b91c1c, #7f1d1d, #dc2626);
+  background-size: 400% 400%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* ✅ EFEITOS DE PARTÍCULAS PARA ELEMENTOS PREMIUM */
+.particle-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.particle-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(251, 191, 36, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(124, 58, 237, 0.3) 0%, transparent 50%);
+  animation: particle-float 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes particle-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(120deg); }
+  66% { transform: translateY(5px) rotate(240deg); }
+}
