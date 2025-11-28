@@ -19,7 +19,7 @@ const IMAGES = {
   draMarina: "https://i.ibb.co/k2XRy3S3/Generatedimage-1764255762791.png",
   esperancaRenovada: "https://i.ibb.co/MDj3zdcb/CAPA-EBOOK-ALEMAO-01.png",
   consequenciasInacao: "https://i.ibb.co/fGTMZNwn/Generatedimage-1764342260674.png",
-  garantiaSeguranca: "https://i.ibb.co/k2XRy3S3/Generatedimage-1764255762791.png",
+  garantiaSeguranca: "https://i.ibb.co/DfcqvmR6/Generatedimage-1764343869418.png",
   agiAgora: "https://i.ibb.co/CpswnrYz/unnamed.png",
 }
 
