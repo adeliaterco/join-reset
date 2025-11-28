@@ -20,7 +20,7 @@ const IMAGES = {
   esperancaRenovada: "https://i.ibb.co/MDj3zdcb/CAPA-EBOOK-ALEMAO-01.png",
   consequenciasInacao: "https://i.ibb.co/fGTMZNwn/Generatedimage-1764342260674.png",
   garantiaSeguranca: "https://i.ibb.co/DfcqvmR6/Generatedimage-1764343869418.png",
-  agiAgora: "https://i.ibb.co/CpswnrYz/unnamed.png",
+  agiAgora: "https://i.ibb.co/cKq4vW8M/limitado-ofer.png",
 }
 
 const CHECKOUT_URL = "https://pay.hotmart.com/P103120932I?off=r5yaffdw"
