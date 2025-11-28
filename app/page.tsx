@@ -94,11 +94,11 @@ export default function ProtocoloAntiCelulasZumbis() {
         </div>
 
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6 break-words" style={{ fontFamily: 'Georgia, serif' }}>
-          Elon Musk Investigou Por Que Astronautas Envelhecem Rápido — Agora Você Pode Usar Essa Descoberta Para Regenerar Seus Ossos em 7 Minutos
+          A Descoberta da NASA Que Regenera Ossos em 7 Minutos
         </h1>
 
         <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed mb-6 sm:mb-8 break-words" style={{ fontFamily: 'Georgia, serif' }}>
-          Baseado na Mesma Descoberta de Pesquisadores da NASA que Elon Musk Investigou Sobre Perda Óssea de Astronautas — Agora Adaptada Para Você
+          Como Elon Musk resolveu o problema dos astronautas — agora adaptado para você
         </p>
 
         <figure className="mb-6 sm:mb-10 w-full">
