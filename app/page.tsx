@@ -25,105 +25,6 @@ const IMAGES = {
 
 const CHECKOUT_URL = "https://pay.hotmart.com/P103120932I?off=r5yaffdw"
 
-const TECNICAS = [
-  {
-    numero: 1,
-    icone: "🎯",
-    titulo: "Rotina de 7 Minutos Anti-Citocinas",
-    problema: "Células zumbis liberam citocinas inflamatórias (IL-1β, TNF-α, IL-6) que corroem sua estrutura óssea 24/7",
-    funcionamento: "Você segue uma sequência específica de movimentos que ativa genes de defesa natural. Seu corpo reconhece as células zumbis como invasoras e as marca para eliminação. As citocinas destrutivas simplesmente param de ser produzidas.",
-    tempo: "7 minutos",
-    quando: "Primeira coisa ao acordar",
-    resultado: "Semana 1: Menos inflamação sistêmica • Melhor sono",
-    cor: "bg-red-50",
-    corBorda: "border-red-600",
-  },
-  {
-    numero: 2,
-    icone: "💧",
-    titulo: "Sequência de Mobilidade Articular",
-    problema: "Células zumbis se acumulam no fluido articular, tornando as articulações cada vez mais secas, rígidas e doloridas",
-    funcionamento: "Você executa movimentos de deslizamento que literalmente expulsam essas células mortas do fluido. Simultaneamente, estimula a produção de líquido sinovial fresco — o 'óleo' natural das articulações.",
-    tempo: "3-4 minutos",
-    quando: "Manhã e noite",
-    resultado: "Semana 1: Menos rigidez matinal • Semana 2: Articulações mais fluidas",
-    cor: "bg-blue-50",
-    corBorda: "border-blue-600",
-  },
-  {
-    numero: 3,
-    icone: "🧠",
-    titulo: "Neurossomática Anti-Dor",
-    problema: "Células zumbis ao redor dos nervos enviam sinais de dor crônica 24 horas por dia para seu cérebro",
-    funcionamento: "Esta técnica desativa o sinal de alerta do nervo. Você toca em pontos específicos que interrompem a cascata de inflamação neural. Sem inflamação = sem sinal de dor.",
-    tempo: "2 minutos",
-    quando: "Quando sentir dor",
-    resultado: "Imediato: Redução de 30-50% de dor",
-    cor: "bg-purple-50",
-    corBorda: "border-purple-600",
-  },
-  {
-    numero: 4,
-    icone: "🍎",
-    titulo: "Protocolo Alimentar Anti-Citocina",
-    problema: "Células zumbis se alimentam de açúcares e gorduras inflamatórias. Enquanto você come isso, alimenta literalmente seus inimigos celulares",
-    funcionamento: "O protocolo alimentar contém 3 alimentos-chave que cortam a nutrição das células zumbis, alimentam células osteoblásticas (construtoras de osso) e bloqueiam a produção de citocinas. Você não elimina comidas — apenas as combina de forma inteligente.",
-    tempo: "0 minutos (você come mesmo)",
-    quando: "Todos os dias (3 refeições)",
-    resultado: "Semana 1-2: Mais energia • Semana 3: Recuperação muscular notável",
-    cor: "bg-green-50",
-    corBorda: "border-green-600",
-  },
-  {
-    numero: 5,
-    icone: "✨",
-    titulo: "Ritual de Ativação Regenerativa",
-    problema: "Sem estimulação específica, seu corpo não consegue ativar as células-tronco dormentes que constroem osso novo",
-    funcionamento: "Este ritual de 3 minutos ativa genes de longevidade (telomerase) e força células zumbis à morte programada (apoptose). É como dar ao seu corpo a 'senha' para regenerar.",
-    tempo: "3 minutos",
-    quando: "À noite antes de dormir",
-    resultado: "Semana 1: Melhor sono • Semana 2: Recuperação durante a noite",
-    cor: "bg-yellow-50",
-    corBorda: "border-yellow-600",
-  },
-  {
-    numero: 6,
-    icone: "💧",
-    titulo: "Reidratação de Cartilagem",
-    problema: "Cartilagem deshidratada fica frágil. Células zumbis corroem a estrutura deixando-a ainda mais seca e quebradiça",
-    funcionamento: "Esta sequência de 2 minutos combina movimento com respiração específica. Aumenta a pressão intersticial, forçando água a penetrar na cartilagem. Você literalmente 'relubrifica' de dentro para fora.",
-    tempo: "2 minutos",
-    quando: "Manhã (após técnica 1)",
-    resultado: "Semana 2: Menos crepitação (estalos) • Semana 3: Movimento mais suave",
-    cor: "bg-cyan-50",
-    corBorda: "border-cyan-600",
-  },
-  {
-    numero: 7,
-    icone: "🔗",
-    titulo: "Deslizamento Vertebral",
-    problema: "Vértebras comprimidas destroem discos intervertebrais. Células zumbis se alojam lá, piorando a compressão e a dor",
-    funcionamento: "Sequência de 3 movimentos que descomprimem suavemente cada vértebra. Remove células zumbis dos discos. Restaura altura natural da coluna e reduz pressão nos nervos.",
-    tempo: "3 minutos",
-    quando: "Noite (antes da técnica 5)",
-    resultado: "Semana 1: Menos dor nas costas • Semana 2: Melhor postura",
-    cor: "bg-indigo-50",
-    corBorda: "border-indigo-600",
-  },
-  {
-    numero: 8,
-    icone: "🗺️",
-    titulo: "Mapa Completo de Reset Articular",
-    problema: "Sem uma 'varredura' completa do sistema, algumas células zumbis conseguem escapar e continuar sabotando silenciosamente",
-    funcionamento: "Este é o 'mapa guia' completo que coordena todas as 7 técnicas anteriores em uma sequência otimizada. Você aprende exatamente qual técnica ativar em qual momento para máxima eliminação de células zumbis.",
-    tempo: "Integrado nas outras (não adiciona tempo)",
-    quando: "Sua 'rotina padrão' para o dia",
-    resultado: "Semana 4: Regeneração acelerada • Semana 8: Densidade óssea visível",
-    cor: "bg-pink-50",
-    corBorda: "border-pink-600",
-  },
-]
-
 const CRONOLOGIA = [
   {
     semana: "Semana 1-2",
@@ -192,16 +93,10 @@ export default function ProtocoloAntiCelulasZumbis() {
           </Badge>
         </div>
 
-        {/* ============================================
-            MUDANÇA: NOVA HEADLINE OPÇÃO 3
-            ============================================ */}
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6 break-words" style={{ fontFamily: 'Georgia, serif' }}>
           Por Que Elon Musk Investigou Por Que Astronautas Envelhecem Rápido — Agora Você Pode Usar Essa Descoberta Para Regenerar Seus Ossos em 7 Minutos
         </h1>
 
-        {/* ============================================
-            NOVA SUB-HEADLINE
-            ============================================ */}
         <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed mb-6 sm:mb-8 break-words" style={{ fontFamily: 'Georgia, serif' }}>
           Baseado na Mesma Descoberta de Pesquisadores da NASA que Elon Musk Investigou Sobre Perda Óssea de Astronautas — Agora Adaptada Para Você
         </p>
@@ -262,9 +157,6 @@ export default function ProtocoloAntiCelulasZumbis() {
             Essa pergunta me levou a uma busca incessante por respostas que iam além de comprimidos de cálcio sem graça, anti-inflamatórios ou suplementos caros que nunca funcionavam.
           </p>
 
-          {/* ============================================
-              NOVO PARÁGRAFO - ELON INVESTIGOU
-              ============================================ */}
           <p>
             <strong>Foi então que descobri o trabalho de Elon Musk e sua equipe científica,</strong> que investigavam um problema que a NASA enfrentava: os astronautas perdiam rapidamente densidade óssea no espaço.
           </p>
@@ -293,9 +185,6 @@ export default function ProtocoloAntiCelulasZumbis() {
             </figcaption>
           </figure>
 
-          {/* ============================================
-              NOVO PARÁGRAFO - INVESTIGAÇÃO DETALHE
-              ============================================ */}
           <p>
             <strong>Elon Musk não estava apenas lançando foguetes</strong> — ele investigava um problema perturbador que a NASA enfrentava: os astronautas perdem rapidamente densidade óssea e força articular no espaço.
           </p>
@@ -651,73 +540,96 @@ export default function ProtocoloAntiCelulasZumbis() {
             </div>
           </figure>
 
+          {/* ============================================
+              ALTERAÇÃO 1: NOVA SEÇÃO SIMPLIFICADA
+              ============================================ */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
-            As 8 Técnicas Revolucionárias Que Eliminam Células Zumbis
+            Como Seus Ossos Se Regeneram Enquanto Você Dorme
           </h2>
 
-          <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-center break-words">
-            Este potente sistema contém <strong>8 técnicas específicas</strong>, cada uma desenvolvida para atacar células zumbis de um ângulo diferente:
-          </p>
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mt-6 sm:mt-8 mb-4 sm:mb-6 break-words">
+            As 3 Técnicas Principais Que Eliminam Células Zumbis
+          </h3>
 
           <div className="space-y-4 sm:space-y-6 my-8 sm:my-10">
-            {TECNICAS.map((tecnica) => (
-              <div key={tecnica.numero} className={`${tecnica.cor} border-l-4 ${tecnica.corBorda} rounded-r-lg p-4 sm:p-6`}>
-                <div className="flex items-start gap-3 sm:gap-4 mb-3">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-gray-800 to-gray-900 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0 text-sm sm:text-base">
-                    {tecnica.numero}
-                  </div>
-                  <h3 className="font-bold text-base sm:text-lg break-words pt-1">{tecnica.titulo}</h3>
-                </div>
+            <div className="bg-red-50 border-l-4 border-red-600 rounded-r-lg p-4 sm:p-6">
+              <h4 className="text-lg sm:text-xl font-bold mb-3 break-words">1️⃣ Rotina Anti-Citocinas de 7 Minutos</h4>
+              <p className="mb-2"><strong className="text-red-700">🎯 O PROBLEMA:</strong> Células zumbis liberam toxinas inflamatórias 24/7</p>
+              <p className="mb-2"><strong className="text-blue-700">💡 A SOLUÇÃO:</strong> Sequência matinal que força seu corpo a eliminar essas células invasoras</p>
+              <p><strong className="text-green-700">✅ RESULTADO:</strong> Semana 1: Menos rigidez, melhor sono, redução de 30-50% da dor</p>
+            </div>
 
-                <div className="ml-11 space-y-3">
-                  <div>
-                    <p className="text-xs sm:text-sm font-bold text-red-700 mb-1">🎯 PROBLEMA QUE RESOLVE:</p>
-                    <p className="text-sm sm:text-base text-gray-700 break-words">{tecnica.problema}</p>
-                  </div>
+            <div className="bg-blue-50 border-l-4 border-blue-600 rounded-r-lg p-4 sm:p-6">
+              <h4 className="text-lg sm:text-xl font-bold mb-3 break-words">2️⃣ Mobilidade Articular Regenerativa</h4>
+              <p className="mb-2"><strong className="text-red-700">🎯 O PROBLEMA:</strong> Articulações secas e rígidas por células zumbis no fluido</p>
+              <p className="mb-2"><strong className="text-blue-700">💡 A SOLUÇÃO:</strong> Movimentos específicos que expulsam células mortas e lubrificam articulações</p>
+              <p><strong className="text-green-700">✅ RESULTADO:</strong> Semana 2: Movimento fluido, sem estalos, confiança ao caminhar</p>
+            </div>
 
-                  <div>
-                    <p className="text-xs sm:text-sm font-bold text-blue-700 mb-1">💡 COMO FUNCIONA:</p>
-                    <p className="text-sm sm:text-base text-gray-700 break-words">{tecnica.funcionamento}</p>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    <div className="bg-white rounded p-2 sm:p-3">
-                      <p className="text-xs font-bold text-gray-600">⏱️ TEMPO</p>
-                      <p className="text-sm font-bold text-gray-900">{tecnica.tempo}</p>
-                    </div>
-                    <div className="bg-white rounded p-2 sm:p-3">
-                      <p className="text-xs font-bold text-gray-600">🕐 QUANDO</p>
-                      <p className="text-sm font-bold text-gray-900">{tecnica.quando}</p>
-                    </div>
-                    <div className="bg-white rounded p-2 sm:p-3">
-                      <p className="text-xs font-bold text-gray-600">✅ RESULTADO</p>
-                      <p className="text-sm font-bold text-green-700">{tecnica.resultado}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="bg-gradient-to-r from-gray-900 to-blue-900 text-white rounded-lg p-8 my-10 text-center">
-            <h3 className="text-2xl font-bold mb-4">⚔️ A GUERRA CONTRA AS CÉLULAS ZUMBIS</h3>
-            <p className="text-xl mb-6 break-words">
-              Pela primeira vez na história, você tem as <strong>8 armas científicas precisas</strong> para vencer esta batalha celular
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-red-800 rounded p-4">
-                <h4 className="font-bold text-lg mb-2">🎯 CÉLULAS ZUMBIS ELIMINADAS:</h4>
-                <p className="text-sm">Citocinas bloqueadas • Senescência interrompida • Inflamação neutralizada</p>
-              </div>
-              <div className="bg-green-800 rounded p-4">
-                <h4 className="font-bold text-lg mb-2">✅ REGENERAÇÃO ATIVADA:</h4>
-                <p className="text-sm">Ossos reconstruídos • Articulações lubrificadas • Nervos relaxados</p>
-              </div>
+            <div className="bg-green-50 border-l-4 border-green-600 rounded-r-lg p-4 sm:p-6">
+              <h4 className="text-lg sm:text-xl font-bold mb-3 break-words">3️⃣ Protocolo Alimentar Anti-Inflamatório</h4>
+              <p className="mb-2"><strong className="text-red-700">🎯 O PROBLEMA:</strong> Sua alimentação atual alimenta as células zumbis</p>
+              <p className="mb-2"><strong className="text-blue-700">💡 A SOLUÇÃO:</strong> 3 alimentos-chave que cortam nutrição das células invasoras</p>
+              <p><strong className="text-green-700">✅ RESULTADO:</strong> Semana 3: Mais energia, recuperação muscular, ossos mais fortes</p>
             </div>
           </div>
 
+          <div className="bg-green-100 border-2 border-green-600 rounded-lg p-6 sm:p-8 my-8 sm:my-10">
+            <h4 className="text-lg sm:text-xl font-bold mb-4 break-words">🎁 BÔNUS: Mais 5 Técnicas Avançadas</h4>
+            <p className="mb-4 text-sm sm:text-base">Além das 3 principais, você recebe 5 técnicas complementares para regeneração completa:</p>
+            <ul className="space-y-2 text-sm sm:text-base">
+              <li>• Ativação de células-tronco dormentes</li>
+              <li>• Reidratação de cartilagem</li>
+              <li>• Deslizamento vertebral</li>
+              <li>• Reset articular completo</li>
+              <li>• Mapa de coordenação total</li>
+            </ul>
+          </div>
+
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
+            Da Dor Crônica à Mobilidade Total em 30 Dias
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 my-8 sm:my-10">
+            <div className="bg-red-100 border-2 border-red-400 rounded-lg p-4 sm:p-6 text-center">
+              <h4 className="text-lg sm:text-xl font-bold text-red-800 mb-3">🔴 SEMANA 1-2: BLOQUEIO</h4>
+              <p className="text-sm sm:text-base">Células zumbis atacadas • Inflamação reduzida • Dor diminuída</p>
+            </div>
+            
+            <div className="bg-yellow-100 border-2 border-yellow-400 rounded-lg p-4 sm:p-6 text-center">
+              <h4 className="text-lg sm:text-xl font-bold text-yellow-800 mb-3">🟡 SEMANA 3-4: LIMPEZA</h4>
+              <p className="text-sm sm:text-base">Células invasoras eliminadas • Movimento fluido • Confiança restaurada</p>
+            </div>
+            
+            <div className="bg-green-100 border-2 border-green-400 rounded-lg p-4 sm:p-6 text-center">
+              <h4 className="text-lg sm:text-xl font-bold text-green-800 mb-3">🟢 SEMANA 5-8: REGENERAÇÃO</h4>
+              <p className="text-sm sm:text-base">Ossos reconstruídos • Força total • Independência completa</p>
+            </div>
+          </div>
+
+          {/* ============================================
+              ALTERAÇÃO 2: PRIMEIRO CTA FORTALECIDO
+              ============================================ */}
+          <div className="my-8 sm:my-12 text-center">
+            <Button 
+              onClick={handleCTA}
+              className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold text-base sm:text-lg md:text-xl py-4 sm:py-6 md:py-8 px-4 sm:px-8 md:px-16 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-105 break-words whitespace-normal leading-tight min-h-[60px] sm:min-h-[80px] flex items-center justify-center"
+            >
+              <span className="text-center block leading-tight">
+                🦴 ELIMINAR CÉLULAS ZUMBIS DOS MEUS OSSOS
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 inline-block align-middle" />
+              </span>
+            </Button>
+            <p className="text-xs sm:text-sm text-gray-500 mt-3 sm:mt-4">
+              Comece a regeneração em 7 minutos
+            </p>
+          </div>
+
+          {/* ============================================
+              ALTERAÇÃO 3: HEADLINE ATUALIZADO
+              ============================================ */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words text-center">
-            A Progressão Científica: O Que Acontece Semana a Semana
+            Seus Ossos Se Fortalecem Automaticamente a Cada Semana
           </h2>
 
           <div className="space-y-4 sm:space-y-6 my-8 sm:my-10">
@@ -764,10 +676,6 @@ export default function ProtocoloAntiCelulasZumbis() {
               </div>
             ))}
           </div>
-
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
-            O Que Você Pode Esperar — Semana por Semana
-          </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 my-8 sm:my-10">
             <div className="bg-red-50 rounded-lg p-4 sm:p-6 border-2 border-red-300">
@@ -843,8 +751,11 @@ export default function ProtocoloAntiCelulasZumbis() {
             </div>
           </div>
 
+          {/* ============================================
+              ALTERAÇÃO 3: HEADLINE ATUALIZADO
+              ============================================ */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
-            Como aplicar o Protocolo Anti-Células Zumbis para alívio máximo
+            7 Minutos Pela Manhã = Ossos Mais Fortes o Dia Todo
           </h2>
 
           <p>
@@ -898,8 +809,11 @@ export default function ProtocoloAntiCelulasZumbis() {
             </p>
           </div>
 
+          {/* ============================================
+              ALTERAÇÃO 3: HEADLINE ATUALIZADO
+              ============================================ */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
-            O que as pessoas estão dizendo sobre o Protocolo
+            Como Mulheres Reais Eliminaram Suas Células Zumbis
           </h2>
 
           <div className="border-l-4 border-blue-600 pl-4 sm:pl-6 py-4 sm:py-6 my-6 sm:my-8 bg-gray-50 rounded-r-lg">
@@ -1042,8 +956,29 @@ export default function ProtocoloAntiCelulasZumbis() {
             </div>
           </div>
 
+          {/* ============================================
+              ALTERAÇÃO 2: SEGUNDO CTA FORTALECIDO
+              ============================================ */}
+          <div className="my-8 sm:my-12 text-center">
+            <Button 
+              onClick={handleCTA}
+              className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-base sm:text-lg md:text-xl py-4 sm:py-6 md:py-8 px-4 sm:px-8 md:px-16 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-105 break-words whitespace-normal leading-tight min-h-[60px] sm:min-h-[80px] flex items-center justify-center"
+            >
+              <span className="text-center block leading-tight">
+                ⚡ RECUPERAR MINHA MOBILIDADE EM 7 MINUTOS
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 inline-block align-middle" />
+              </span>
+            </Button>
+            <p className="text-xs sm:text-sm text-gray-500 mt-3 sm:mt-4">
+              Protocolo completo + garantia 30 dias
+            </p>
+          </div>
+
+          {/* ============================================
+              ALTERAÇÃO 3: HEADLINE ATUALIZADO
+              ============================================ */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words text-center">
-            Por Que Essas 8 Técnicas São Diferentes (Finalmente)
+            Por Que Este Protocolo Funciona Quando Tudo Mais Falha
           </h2>
 
           <div className="bg-blue-50 rounded-lg p-6 sm:p-8 my-8 sm:my-10 space-y-6">
@@ -1099,8 +1034,11 @@ export default function ProtocoloAntiCelulasZumbis() {
             </div>
           </div>
 
+          {/* ============================================
+              ALTERAÇÃO 3: HEADLINE ATUALIZADO
+              ============================================ */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
-            O que acontece se você não fizer nada?
+            A Cada Dia de Espera, Suas Células Zumbis Se Multiplicam
           </h2>
 
           <figure className="my-6 sm:my-8 w-full">
@@ -1211,21 +1149,6 @@ export default function ProtocoloAntiCelulasZumbis() {
             </div>
           </div>
 
-          <div className="my-8 sm:my-12 text-center">
-            <Button 
-              onClick={handleCTA}
-              className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold text-base sm:text-lg md:text-xl py-4 sm:py-6 md:py-8 px-4 sm:px-8 md:px-16 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-105 break-words whitespace-normal leading-tight min-h-[60px] sm:min-h-[80px] flex items-center justify-center"
-            >
-              <span className="text-center block leading-tight">
-                SIM, QUERO ACESSAR AS 8 TÉCNICAS AGORA
-                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 inline-block align-middle" />
-              </span>
-            </Button>
-            <p className="text-xs sm:text-sm text-gray-500 mt-3 sm:mt-4">
-              🔒 Pagamento 100% Seguro • ⚡ Acesso Imediato • 🛡️ Garantia de 30 Dias
-            </p>
-          </div>
-
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 text-center break-words">
             Garantia Progressiva de 30 Dias, Sem Perguntas
           </h2>
@@ -1328,15 +1251,21 @@ export default function ProtocoloAntiCelulasZumbis() {
               </figcaption>
             </figure>
 
+            {/* ============================================
+                ALTERAÇÃO 2: CTA DE URGÊNCIA
+                ============================================ */}
             <div className="text-center">
               <Button 
                 onClick={handleCTA}
                 className="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white font-bold text-base sm:text-lg md:text-xl py-4 sm:py-6 md:py-8 px-4 sm:px-8 md:px-16 rounded-full shadow-2xl animate-pulse break-words whitespace-normal leading-tight min-h-[60px] sm:min-h-[80px] flex items-center justify-center"
               >
                 <span className="text-center block leading-tight">
-                  🚨 GARANTIR MINHA VAGA AGORA
+                  🚨 PARAR A DESTRUIÇÃO ÓSSEA AGORA
                 </span>
               </Button>
+              <p className="text-xs sm:text-sm text-gray-500 mt-3 sm:mt-4">
+                Antes que seja tarde demais
+              </p>
             </div>
           </div>
 
@@ -1420,6 +1349,9 @@ export default function ProtocoloAntiCelulasZumbis() {
             </p>
           </div>
 
+          {/* ============================================
+              ALTERAÇÃO 2: CTA PRINCIPAL FINAL
+              ============================================ */}
           <div className="my-8 sm:my-12 text-center bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-6 sm:p-10">
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 break-words">
               Esta pode ser a decisão que divide sua vida em "antes" e "depois"
@@ -1439,7 +1371,7 @@ export default function ProtocoloAntiCelulasZumbis() {
               className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold text-base sm:text-lg md:text-xl py-6 sm:py-8 md:py-10 px-6 sm:px-12 md:px-20 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-105 break-words whitespace-normal leading-tight min-h-[80px] sm:min-h-[100px] flex items-center justify-center"
             >
               <span className="text-center block leading-tight">
-                🛡️ RECUPERAR MINHA MOBILIDADE - COMECE SEMANA 1
+                🦴 ELIMINAR CÉLULAS ZUMBIS DOS MEUS OSSOS
                 <ArrowRight className="ml-2 w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 inline-block align-middle" />
               </span>
             </Button>
@@ -1559,6 +1491,9 @@ export default function ProtocoloAntiCelulasZumbis() {
         </div>
       </footer>
 
+      {/* ============================================
+          NOVO CSS NECESSÁRIO
+          ============================================ */}
       <style jsx global>{`
         .article-body {
           font-family: Georgia, 'Times New Roman', serif;
@@ -1626,6 +1561,52 @@ export default function ProtocoloAntiCelulasZumbis() {
 
         * {
           box-sizing: border-box;
+        }
+
+        .tecnica-box {
+          border: 2px solid #e74c3c;
+          padding: 20px;
+          margin: 15px 0;
+          border-radius: 8px;
+          background: #fff9f9;
+        }
+
+        .bonus-box {
+          border: 2px solid #27ae60;
+          padding: 20px;
+          margin: 20px 0;
+          border-radius: 8px;
+          background: #f9fff9;
+        }
+
+        .progressao {
+          display: flex;
+          gap: 20px;
+          margin: 20px 0;
+        }
+
+        .semana {
+          flex: 1;
+          text-align: center;
+          padding: 15px;
+          border-radius: 8px;
+        }
+
+        .cta-subtitle {
+          font-size: 14px;
+          color: #666;
+          margin-top: 5px;
+          font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+          .progressao {
+            flex-direction: column;
+          }
+          
+          .tecnica-box, .bonus-box {
+            padding: 15px;
+          }
         }
       `}</style>
 
