@@ -25,9 +25,6 @@ const IMAGES = {
 
 const CHECKOUT_URL = "https://pay.hotmart.com/P103120932I?off=r5yaffdw"
 
-// ============================================
-// 8 TÉCNICAS - DADOS ESTRUTURADOS
-// ============================================
 const TECNICAS = [
   {
     numero: 1,
@@ -127,9 +124,6 @@ const TECNICAS = [
   },
 ]
 
-// ============================================
-// CRONOLOGIA
-// ============================================
 const CRONOLOGIA = [
   {
     semana: "Semana 1-2",
@@ -192,25 +186,26 @@ export default function ProtocoloAntiCelulasZumbis() {
     <main className="min-h-screen bg-white overflow-x-hidden">
       <article className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-12">
         
-        {/* ============================================
-            SEÇÃO 1: BADGE E HEADLINES
-            ============================================ */}
         <div className="mb-4 sm:mb-6">
           <Badge className="bg-red-600 text-white px-3 sm:px-4 py-1 text-xs font-bold uppercase">
             Saúde • Investigação Científica
           </Badge>
         </div>
 
-        {/* MUDANÇA 1: HEADLINE OTIMIZADO */}
+        {/* ============================================
+            MUDANÇA: NOVA HEADLINE OPÇÃO 3
+            ============================================ */}
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6 break-words" style={{ fontFamily: 'Georgia, serif' }}>
-          Elon Musk Revela: As 8 Técnicas Que Eliminam Células Zumbis em 7 Minutos por Dia e Regeneram Densidade Óssea Naturalmente
+          Por Que Elon Musk Investigou Por Que Astronautas Envelhecem Rápido — Agora Você Pode Usar Essa Descoberta Para Regenerar Seus Ossos em 7 Minutos
         </h1>
 
+        {/* ============================================
+            NOVA SUB-HEADLINE
+            ============================================ */}
         <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed mb-6 sm:mb-8 break-words" style={{ fontFamily: 'Georgia, serif' }}>
-          Protocolo de 8 técnicas específicas (7 minutos) que elimina células zumbis e reconstrói ossos em 60 dias
+          Baseado na Mesma Descoberta de Pesquisadores da NASA que Elon Musk Investigou Sobre Perda Óssea de Astronautas — Agora Adaptada Para Você
         </p>
 
-        {/* HERO IMAGE */}
         <figure className="mb-6 sm:mb-10 w-full">
           <div className="relative w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] rounded-lg overflow-hidden bg-gray-200">
             <Image 
@@ -267,23 +262,26 @@ export default function ProtocoloAntiCelulasZumbis() {
             Essa pergunta me levou a uma busca incessante por respostas que iam além de comprimidos de cálcio sem graça, anti-inflamatórios ou suplementos caros que nunca funcionavam.
           </p>
 
+          {/* ============================================
+              NOVO PARÁGRAFO - ELON INVESTIGOU
+              ============================================ */}
           <p>
-            <strong>Foi então que descobri o trabalho de Elon Musk e sua equipe científica,</strong> um biólogo celular pioneiro focado nas causas ocultas da rápida deterioração óssea em mulheres idosas.
+            <strong>Foi então que descobri o trabalho de Elon Musk e sua equipe científica,</strong> que investigavam um problema que a NASA enfrentava: os astronautas perdiam rapidamente densidade óssea no espaço.
           </p>
 
           <p className="font-bold text-lg sm:text-xl">
-            E o que ele descobriu... mudou tudo.
+            E o que essa investigação revelou... mudou tudo.
           </p>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
-            A descoberta revolucionária de Elon Musk — e a verdade alarmante sobre a perda óssea
+            A Descoberta de Elon Musk Sobre a NASA — E a Verdade Alarmante Sobre a Perda Óssea
           </h2>
 
           <figure className="my-6 sm:my-8 w-full">
             <div className="relative w-full h-[250px] sm:h-[350px] md:h-[400px] rounded-lg overflow-hidden bg-gray-200">
               <Image 
                 src={IMAGES.elonMuskFoto}
-                alt="Elon Musk descoberta células zumbis"
+                alt="Elon Musk investigação NASA células zumbis"
                 fill
                 className="object-contain sm:object-cover"
                 unoptimized
@@ -291,30 +289,29 @@ export default function ProtocoloAntiCelulasZumbis() {
               />
             </div>
             <figcaption className="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-3 italic px-2 sm:px-0">
-              Elon Musk e sua equipe descobriram conexão entre perda óssea de astronautas e envelhecimento na Terra. Foto: Arquivo
+              Elon Musk investigou o problema de perda óssea de astronautas na NASA. Foto: Arquivo
             </figcaption>
           </figure>
 
+          {/* ============================================
+              NOVO PARÁGRAFO - INVESTIGAÇÃO DETALHE
+              ============================================ */}
           <p>
-            <strong>Elon Musk não estava apenas lançando foguetes</strong> — ele acidentalmente revelou uma crise silenciosa de saúde que está destruindo milhões de mulheres de dentro para fora.
+            <strong>Elon Musk não estava apenas lançando foguetes</strong> — ele investigava um problema perturbador que a NASA enfrentava: os astronautas perdem rapidamente densidade óssea e força articular no espaço.
           </p>
 
           <p>
-            Durante anos, a NASA enfrentou um grande problema: os astronautas perdem rapidamente densidade óssea e força articular no espaço — <strong>da mesma forma que milhões de mulheres ao chegarem aos 50 anos.</strong> Musk queria respostas. Não apenas para os astronautas... mas para todos que envelhecem na Terra.
+            Durante essa investigação, ele e sua equipe fizeram uma conexão surpreendente que revelou uma crise silenciosa:
           </p>
 
           <div className="bg-blue-50 border-l-4 border-blue-600 pl-4 sm:pl-6 py-4 sm:py-6 my-6 sm:my-8 rounded-r-lg">
             <p className="font-bold mb-3 sm:mb-4">
-              Sua equipe de pesquisa fez uma conexão surpreendente:
-            </p>
-            <p>
               O mesmo mecanismo biológico que destrói os ossos dos astronautas no espaço está silenciosamente atacando as mulheres à medida que envelhecem na Terra.
             </p>
+            <p>
+              E a causa? Um grupo perturbador de células disfuncionais conhecidas como <strong className="text-red-600">"células zumbis".</strong>
+            </p>
           </div>
-
-          <p>
-            E no cerne desse problema está um grupo perturbador de células disfuncionais — agora conhecidas como <strong className="text-red-600">"células zumbis".</strong>
-          </p>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
             O que são "células zumbis" — e por que estão destruindo seus ossos
@@ -325,7 +322,7 @@ export default function ProtocoloAntiCelulasZumbis() {
           </p>
 
           <p>
-            Durante anos, essas células anômalas foram consideradas inofensivas. Mas a equipe de Elon Musk descobriu algo muito mais perturbador:
+            Durante anos, essas células anômalas foram consideradas inofensivas. Mas a investigação de Elon Musk e sua equipe descobriu algo muito mais perturbador:
           </p>
 
           <blockquote className="text-lg sm:text-xl md:text-2xl font-bold text-red-700 italic text-center py-4 sm:py-6 my-6 sm:my-8 bg-red-50 rounded-lg px-4 sm:px-6 break-words">
@@ -597,9 +594,6 @@ export default function ProtocoloAntiCelulasZumbis() {
             </ul>
           </div>
 
-          {/* ============================================
-              MUDANÇA 2: SEÇÃO DE ESCLARECIMENTO
-              ============================================ */}
           <div className="bg-blue-50 border-2 border-blue-400 rounded-lg p-6 sm:p-8 my-8 sm:my-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-blue-900 mb-4 sm:mb-6 text-center break-words">
               🎯 Entenda o Protocolo: 8 Técnicas em 7 Minutos
@@ -641,7 +635,7 @@ export default function ProtocoloAntiCelulasZumbis() {
           </h2>
 
           <p>
-            A descoberta de Elon Musk levou ao desenvolvimento de um <strong>protocolo revolucionário</strong> que aborda a deterioração óssea na sua origem.
+            Essa descoberta de Elon Musk levou ao desenvolvimento de um <strong>protocolo revolucionário</strong> que aborda a deterioração óssea na sua origem.
           </p>
 
           <figure className="my-8 sm:my-10 w-full">
@@ -657,9 +651,6 @@ export default function ProtocoloAntiCelulasZumbis() {
             </div>
           </figure>
 
-          {/* ============================================
-              MUDANÇA 3: SEÇÃO DAS 8 TÉCNICAS DETALHADAS
-              ============================================ */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
             As 8 Técnicas Revolucionárias Que Eliminam Células Zumbis
           </h2>
@@ -725,9 +716,6 @@ export default function ProtocoloAntiCelulasZumbis() {
             </div>
           </div>
 
-          {/* ============================================
-              MUDANÇA 4: CRONOLOGIA SEMANA-A-SEMANA
-              ============================================ */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words text-center">
             A Progressão Científica: O Que Acontece Semana a Semana
           </h2>
@@ -777,9 +765,6 @@ export default function ProtocoloAntiCelulasZumbis() {
             ))}
           </div>
 
-          {/* ============================================
-              MUDANÇA 5: O QUE VOCÊ PODE ESPERAR - ESPECÍFICO
-              ============================================ */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
             O Que Você Pode Esperar — Semana por Semana
           </h2>
@@ -986,7 +971,6 @@ export default function ProtocoloAntiCelulasZumbis() {
             </p>
           </div>
 
-          {/* MUDANÇA 6: NOVO DEPOIMENTO */}
           <div className="border-l-4 border-orange-600 pl-4 sm:pl-6 py-4 sm:py-6 my-6 sm:my-8 bg-gray-50 rounded-r-lg">
             <div className="flex items-center mb-3 sm:mb-4">
               <div>
@@ -1058,7 +1042,6 @@ export default function ProtocoloAntiCelulasZumbis() {
             </div>
           </div>
 
-          {/* MUDANÇA 7: SEÇÃO "POR QUE DIFERENTES" */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words text-center">
             Por Que Essas 8 Técnicas São Diferentes (Finalmente)
           </h2>
@@ -1182,7 +1165,7 @@ export default function ProtocoloAntiCelulasZumbis() {
 
           <div className="bg-purple-50 border-l-4 border-purple-600 pl-4 sm:pl-6 py-4 sm:py-6 my-6 sm:my-8 rounded-r-lg">
             <p className="text-sm sm:text-base break-words">
-              Essa abordagem faz parte do compromisso de <strong>Elon Musk:</strong> tornar o suporte avançado para ossos e articulações <strong>acessível para quem mais precisa.</strong>
+              Essa abordagem faz parte do compromisso com a acessibilidade: tornar o suporte avançado para ossos e articulações <strong>acessível para quem mais precisa.</strong>
             </p>
           </div>
 
@@ -1190,7 +1173,6 @@ export default function ProtocoloAntiCelulasZumbis() {
             E agora vem a melhor parte
           </h2>
 
-          {/* MUDANÇA 8: SCARCITY MELHORADA */}
           <div className="bg-green-50 rounded-lg p-6 sm:p-8 my-8 sm:my-10 text-center">
             <p className="text-lg sm:text-xl mb-4 sm:mb-6">
               Embora o preço normal seja <span className="line-through text-red-600">€297</span>, agora mesmo você pode ter acesso por apenas <span className="line-through text-red-600">€197</span>.
@@ -1215,7 +1197,6 @@ export default function ProtocoloAntiCelulasZumbis() {
                 Um preço que o torna acessível para quem mais precisa.
               </p>
 
-              {/* MUDANÇA 8: SCARCITY COM VAGAS */}
               <div className="mt-6 sm:mt-8 bg-red-100 border-2 border-red-400 rounded-lg p-4 sm:p-6">
                 <p className="font-bold text-red-800 mb-2">⏰ SCARCITY REAL - VAGAS LIMITADAS</p>
                 <p className="text-red-700 font-bold text-2xl mb-2">🛡️ {vagas} Vagas Restantes Nesta Semana</p>
@@ -1231,7 +1212,6 @@ export default function ProtocoloAntiCelulasZumbis() {
           </div>
 
           <div className="my-8 sm:my-12 text-center">
-            {/* MUDANÇA 9: CTA BUTTON OTIMIZADO */}
             <Button 
               onClick={handleCTA}
               className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold text-base sm:text-lg md:text-xl py-4 sm:py-6 md:py-8 px-4 sm:px-8 md:px-16 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-105 break-words whitespace-normal leading-tight min-h-[60px] sm:min-h-[80px] flex items-center justify-center"
@@ -1250,7 +1230,6 @@ export default function ProtocoloAntiCelulasZumbis() {
             Garantia Progressiva de 30 Dias, Sem Perguntas
           </h2>
 
-          {/* MUDANÇA 11: GARANTIA PROGRESSIVA */}
           <figure className="my-6 sm:my-8 w-full">
             <div className="relative w-full h-[250px] sm:h-[350px] md:h-[400px] rounded-lg overflow-hidden bg-gray-200">
               <Image 
@@ -1275,7 +1254,6 @@ export default function ProtocoloAntiCelulasZumbis() {
                   <strong>Experimente o Protocolo por 30 dias completos.</strong> São 30 dias para sentir a diferença em seus ossos, articulações e no seu dia a dia.
                 </p>
 
-                {/* MUDANÇA 11: GARANTIA COM MARCOS */}
                 <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                   <div className="bg-white rounded-lg p-3 sm:p-4 border-l-4 border-red-600">
                     <p className="font-bold text-red-800 text-sm sm:text-base">✓ Semana 1</p>
@@ -1471,7 +1449,6 @@ export default function ProtocoloAntiCelulasZumbis() {
             </p>
           </div>
 
-          {/* MUDANÇA 10: FAQ EXPANDIDO COM NOVAS PERGUNTAS */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
             Perguntas Frequentes
           </h2>
