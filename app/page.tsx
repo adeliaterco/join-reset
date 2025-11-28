@@ -18,7 +18,7 @@ const IMAGES = {
   protocoloAntiCelulasZumbis: "https://i.ibb.co/Jwm1FtHw/unnamed-1.png",
   draMarina: "https://i.ibb.co/k2XRy3S3/Generatedimage-1764255762791.png",
   esperancaRenovada: "https://i.ibb.co/MDj3zdcb/CAPA-EBOOK-ALEMAO-01.png",
-  consequenciasInacao: "https://i.ibb.co/v2PrSm9/1cfb8ad7a3e4dae6f664e94f2e533d-1764218053701.jpg",
+  consequenciasInacao: "https://i.ibb.co/fGTMZNwn/Generatedimage-1764342260674.png",
   garantiaSeguranca: "https://i.ibb.co/k2XRy3S3/Generatedimage-1764255762791.png",
   agiAgora: "https://i.ibb.co/CpswnrYz/unnamed.png",
 }
