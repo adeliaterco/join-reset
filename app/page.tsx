@@ -15,7 +15,7 @@ const IMAGES = {
   celulasSenescentes: "https://i.ibb.co/MkQZ8Z1R/94ee6615abe3b5144ee00558e3764e-1764218058684.png",
   pesquisaNasaDensidadeOssea: "https://i.ibb.co/v4DhG8Jr/75ec9d11fde58bba5436049d0b807a-1764218063334.jpg",
   raioXOssoSaudavel: "https://i.ibb.co/CpswnrYz/unnamed.png",
-  protocoloAntiCelulasZumbis: "https://i.ibb.co/Jwm1FtHw/unnamed-1.png",
+  protocoloAntiCelulasZumbis: "https://i.ibb.co/C5XbBLmc/CAPA-EBOOK-ALEMAO.png",
   draMarina: "https://i.ibb.co/k2XRy3S3/Generatedimage-1764255762791.png",
   esperancaRenovada: "https://i.ibb.co/x8H0047y/5c4fa786e4bf6b95eae2720de5a6f7-1764217967139.png",
   consequenciasInacao: "https://i.ibb.co/v2PrSm9/1cfb8ad7a3e4dae6f664e94f2e533d-1764218053701.jpg",
