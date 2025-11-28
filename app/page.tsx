@@ -1230,9 +1230,7 @@ export default function ProtocoloAntiCelulasZumbis() {
               </p>
 
               <div className="mt-6 sm:mt-8 bg-red-100 border-2 border-red-400 rounded-lg p-4 sm:p-6">
-                <p className="font-bold text-red-800 mb-2">⏰ SCARCITY REAL - VAGAS LIMITADAS</p>
                 <p className="text-red-700 font-bold text-2xl mb-2">🛡️ {vagas} Vagas Restantes Nesta Semana</p>
-                <p className="text-sm text-red-700">Esta oferta expira em 48 horas</p>
               </div>
             </div>
 
