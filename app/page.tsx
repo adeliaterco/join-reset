@@ -471,41 +471,151 @@ export default function ProtocoloAntiCelulasZumbis() {
             </ul>
           </div>
 
-          <div className="bg-blue-50 border-2 border-blue-400 rounded-lg p-6 sm:p-8 my-8 sm:my-10">
-            <h2 className="text-2xl sm:text-3xl font-bold text-blue-900 mb-4 sm:mb-6 text-center break-words">
-              🎯 Entenda o Protocolo: 8 Técnicas em 7 Minutos
+          {/* ============================================
+              NOVA SEÇÃO IMPLEMENTADA CONFORME ESPECIFICAÇÕES
+              ============================================ */}
+          <section className="protocolo-secao">
+            
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
+              🦴 O Protocolo Que Regenera Seus Ossos
             </h2>
 
-            <div className="space-y-4 sm:space-y-6">
-              <p className="text-base sm:text-lg break-words">
-                Você pode estar se perguntando: <strong>"São 8 técnicas ou 7 minutos?"</strong> A resposta é simples e genial:
-              </p>
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 break-words">
+              Comece Com Apenas 7 Minutos. Adicione o Resto Quando Quiser.
+            </h3>
 
-              <div className="bg-white rounded-lg p-4 sm:p-6 border-l-4 border-blue-600">
-                <p className="text-gray-700 text-sm sm:text-base mb-3">
-                  <strong>O Protocolo contém 8 técnicas científicas diferentes.</strong> A rotina MATINAL principal (que elimina células zumbis) leva 7 minutos. Você pode fazer as 8 no primeiro mês ou começar apenas com as 3 principais nos primeiros dias.
-                </p>
+            <p className="text-base sm:text-lg mb-6 sm:mb-8 break-words">
+              O <strong>Protocolo Anti-Células Zumbis</strong> possui <strong>8 técnicas científicas</strong> organizadas de forma inteligente:
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 my-6 sm:my-8">
+              <div className="bg-blue-50 border-2 border-blue-600 rounded-lg p-4 sm:p-6">
+                <h4 className="text-lg sm:text-xl font-bold text-blue-800 mb-3 break-words">🎯 NÚCLEO ESSENCIAL (7 minutos)</h4>
+                <p className="text-sm sm:text-base text-blue-700 break-words">As <strong>3 técnicas principais</strong> que eliminam 70% das células zumbis</p>
               </div>
-
-              <div className="bg-white rounded-lg p-4 sm:p-6 border-l-4 border-green-600">
-                <h3 className="font-bold text-gray-900 mb-3 text-sm sm:text-base">Como funciona na prática:</h3>
-                <ul className="space-y-2 text-sm sm:text-base">
-                  <li><strong>SEMANA 1-2:</strong> Você aprende as 3 técnicas principais (5-7 minutos)</li>
-                  <li><strong>SEMANA 3-4:</strong> Adiciona mais 2 técnicas (10-12 minutos)</li>
-                  <li><strong>SEMANA 5+:</strong> Protocolo completo com todas as 8 (15 minutos)</li>
-                </ul>
-                <p className="mt-3 text-gray-700 text-sm sm:text-base">
-                  A maioria das pessoas nota mudanças significativas na <strong>SEMANA 1</strong>, mesmo fazendo apenas as 3 primeiras técnicas.
-                </p>
-              </div>
-
-              <div className="bg-yellow-100 border border-yellow-400 rounded-lg p-4 sm:p-6 text-center">
-                <p className="font-bold text-yellow-900 text-sm sm:text-base break-words">
-                  O importante é começar. Seus ossos não podem esperar.
-                </p>
+              
+              <div className="bg-green-50 border-2 border-green-600 rounded-lg p-4 sm:p-6">
+                <h4 className="text-lg sm:text-xl font-bold text-green-800 mb-3 break-words">⚡ POTENCIALIZADORES (+8 minutos)</h4>
+                <p className="text-sm sm:text-base text-green-700 break-words">Mais <strong>5 técnicas</strong> que aceleram a regeneração completa</p>
               </div>
             </div>
-          </div>
+
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 break-words">
+              📊 PROGRESSÃO COMPROVADA:
+            </h3>
+
+            <div className="overflow-x-auto my-6 sm:my-8">
+              <table className="w-full border-collapse border-2 border-gray-300 rounded-lg overflow-hidden">
+                <thead className="bg-gray-100">
+                  <tr>
+                    <th className="border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-left font-bold text-sm sm:text-base">Semana</th>
+                    <th className="border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-left font-bold text-sm sm:text-base">Técnicas</th>
+                    <th className="border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-left font-bold text-sm sm:text-base">Tempo</th>
+                    <th className="border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-left font-bold text-sm sm:text-base">Resultado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-white">
+                    <td className="border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 font-bold text-sm sm:text-base">1-2</td>
+                    <td className="border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base">3 principais</td>
+                    <td className="border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base">7 min</td>
+                    <td className="border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base">Dor reduzida 30-50%</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 font-bold text-sm sm:text-base">3-4</td>
+                    <td className="border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base">8 completas</td>
+                    <td className="border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base">15 min</td>
+                    <td className="border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base">Movimento fluido</td>
+                  </tr>
+                  <tr className="bg-white">
+                    <td className="border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 font-bold text-sm sm:text-base">5+</td>
+                    <td className="border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base">8 completas</td>
+                    <td className="border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base">15 min</td>
+                    <td className="border border-gray-300 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base">Regeneração total</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <hr className="border-2 border-gray-300 my-8 sm:my-10" />
+
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 break-words">
+              🔥 AS 3 TÉCNICAS DO NÚCLEO (7 MINUTOS)
+            </h2>
+
+            <div className="space-y-6 sm:space-y-8">
+              <div className="bg-red-50 border-l-4 border-red-600 rounded-r-lg p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 break-words">1️⃣ SEQUÊNCIA ANTI-CITOCINAS (3 minutos)</h3>
+                <p className="mb-2 text-sm sm:text-base"><strong className="text-red-700">🎯 O PROBLEMA:</strong> Células zumbis liberam toxinas inflamatórias 24/7</p>
+                <p className="mb-2 text-sm sm:text-base"><strong className="text-blue-700">💡 A SOLUÇÃO:</strong> Movimentos que forçam eliminação dessas células</p>
+                <p className="text-sm sm:text-base"><strong className="text-green-700">✅ RESULTADO:</strong> Menos rigidez, melhor sono, -50% dor</p>
+              </div>
+
+              <div className="bg-blue-50 border-l-4 border-blue-600 rounded-r-lg p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 break-words">2️⃣ MOBILIDADE ARTICULAR REGENERATIVA (2 minutos)</h3>
+                <p className="mb-2 text-sm sm:text-base"><strong className="text-red-700">🎯 O PROBLEMA:</strong> Articulações secas por células mortas no fluido</p>
+                <p className="mb-2 text-sm sm:text-base"><strong className="text-blue-700">💡 A SOLUÇÃO:</strong> Lubrificação natural através de movimento específico</p>
+                <p className="text-sm sm:text-base"><strong className="text-green-700">✅ RESULTADO:</strong> Movimento sem estalos, confiança ao caminhar</p>
+              </div>
+
+              <div className="bg-green-50 border-l-4 border-green-600 rounded-r-lg p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 break-words">3️⃣ ATIVAÇÃO ÓSSEA DIRETA (2 minutos)</h3>
+                <p className="mb-2 text-sm sm:text-base"><strong className="text-red-700">🎯 O PROBLEMA:</strong> Ossos param de produzir células novas</p>
+                <p className="mb-2 text-sm sm:text-base"><strong className="text-blue-700">💡 A SOLUÇÃO:</strong> Estímulos que reativam construção óssea</p>
+                <p className="text-sm sm:text-base"><strong className="text-green-700">✅ RESULTADO:</strong> Densidade óssea aumenta semana após semana</p>
+              </div>
+            </div>
+
+            <hr className="border-2 border-gray-300 my-8 sm:my-10" />
+
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 break-words">
+              ⚡ AS 5 TÉCNICAS COMPLEMENTARES (+8 MINUTOS)
+            </h2>
+
+            <div className="bg-gray-50 rounded-lg p-6 sm:p-8 space-y-4">
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 break-words">4️⃣ RESET ARTICULAR COMPLETO (2 min)</h3>
+                <p className="text-sm sm:text-base text-gray-700">Elimina células zumbis presas nas articulações</p>
+              </div>
+
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 break-words">5️⃣ DESLIZAMENTO VERTEBRAL (2 min)</h3>
+                <p className="text-sm sm:text-base text-gray-700">Libera compressão e melhora postura</p>
+              </div>
+
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 break-words">6️⃣ COORDENAÇÃO TOTAL (2 min)</h3>
+                <p className="text-sm sm:text-base text-gray-700">Reconecta músculos com ossos</p>
+              </div>
+
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 break-words">7️⃣ ATIVAÇÃO DE CÉLULAS-TRONCO (1 min)</h3>
+                <p className="text-sm sm:text-base text-gray-700">Acelera produção de células ósseas novas</p>
+              </div>
+
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 break-words">8️⃣ PROTOCOLO ALIMENTAR (1 min)</h3>
+                <p className="text-sm sm:text-base text-gray-700">3 alimentos que cortam nutrição das células zumbis</p>
+              </div>
+            </div>
+
+            <hr className="border-2 border-gray-300 my-8 sm:my-10" />
+
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 break-words">
+              🎯 COMEÇE HOJE: SÓ 7 MINUTOS
+            </h2>
+
+            <div className="bg-green-50 border-2 border-green-600 rounded-lg p-6 sm:p-8 text-center">
+              <p className="text-base sm:text-lg mb-3 sm:mb-4 break-words"><strong>Primeira semana:</strong> Apenas técnicas 1, 2, 3 (7 minutos)</p>
+              <p className="text-base sm:text-lg mb-3 sm:mb-4 break-words"><strong>Se funcionar:</strong> Adicione as outras 5 (+8 minutos)</p>
+              <p className="text-base sm:text-lg mb-4 sm:mb-6 break-words"><strong>Se não funcionar:</strong> Dinheiro de volta, sem perguntas</p>
+              
+              <blockquote className="bg-white border-l-4 border-green-600 pl-4 sm:pl-6 py-3 sm:py-4 italic text-lg sm:text-xl text-green-800 break-words">
+                "A maioria vê resultados NA PRIMEIRA SEMANA com apenas as 3 técnicas principais."
+              </blockquote>
+            </div>
+
+          </section>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-8 sm:mt-12 mb-4 sm:mb-6 break-words">
             O protocolo revolucionário que ajuda os ossos a se regenerarem e as articulações a se revitalizarem
@@ -596,7 +706,7 @@ export default function ProtocoloAntiCelulasZumbis() {
           </div>
 
           {/* ============================================
-              ALTERAÇÃO 2: PRIMEIRO CTA FORTALECIDO
+              ALTERAÇÃO 2: PRIMEIRO CTA FORTALECIDO COM CTA ATUALIZADO
               ============================================ */}
           <div className="my-8 sm:my-12 text-center">
             <Button 
@@ -604,8 +714,10 @@ export default function ProtocoloAntiCelulasZumbis() {
               className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold text-base sm:text-lg md:text-xl py-4 sm:py-6 md:py-8 px-4 sm:px-8 md:px-16 rounded-full shadow-2xl transform transition-all duration-300 hover:scale-105 break-words whitespace-normal leading-tight min-h-[60px] sm:min-h-[80px] flex items-center justify-center"
             >
               <span className="text-center block leading-tight">
-                🦴 ELIMINAR CÉLULAS ZUMBIS DOS MEUS OSSOS
+                ✅ COMEÇAR COM 7 MINUTOS HOJE
                 <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 inline-block align-middle" />
+                <br />
+                <small className="text-xs sm:text-sm opacity-80">Protocolo completo + garantia incondicional</small>
               </span>
             </Button>
             <p className="text-xs sm:text-sm text-gray-500 mt-3 sm:mt-4">
@@ -1467,9 +1579,6 @@ export default function ProtocoloAntiCelulasZumbis() {
         </div>
       </footer>
 
-      {/* ============================================
-          NOVO CSS NECESSÁRIO
-          ============================================ */}
       <style jsx global>{`
         .article-body {
           font-family: Georgia, 'Times New Roman', serif;
@@ -1537,52 +1646,6 @@ export default function ProtocoloAntiCelulasZumbis() {
 
         * {
           box-sizing: border-box;
-        }
-
-        .tecnica-box {
-          border: 2px solid #e74c3c;
-          padding: 20px;
-          margin: 15px 0;
-          border-radius: 8px;
-          background: #fff9f9;
-        }
-
-        .bonus-box {
-          border: 2px solid #27ae60;
-          padding: 20px;
-          margin: 20px 0;
-          border-radius: 8px;
-          background: #f9fff9;
-        }
-
-        .progressao {
-          display: flex;
-          gap: 20px;
-          margin: 20px 0;
-        }
-
-        .semana {
-          flex: 1;
-          text-align: center;
-          padding: 15px;
-          border-radius: 8px;
-        }
-
-        .cta-subtitle {
-          font-size: 14px;
-          color: #666;
-          margin-top: 5px;
-          font-style: italic;
-        }
-
-        @media (max-width: 768px) {
-          .progressao {
-            flex-direction: column;
-          }
-          
-          .tecnica-box, .bonus-box {
-            padding: 15px;
-          }
         }
       `}</style>
 
