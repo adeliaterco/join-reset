@@ -177,9 +177,6 @@ export default function ProtocoloAntiCelulasZumbis() {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
               />
             </div>
-            <figcaption className="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-3 italic px-2 sm:px-0">
-              Elon Musk investigou o problema de perda óssea de astronautas na NASA. Foto: Arquivo
-            </figcaption>
           </figure>
 
           <p>
@@ -234,9 +231,6 @@ export default function ProtocoloAntiCelulasZumbis() {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
               />
             </div>
-            <figcaption className="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-3 italic px-2 sm:px-0">
-              Células senescentes atacando a estrutura óssea.
-            </figcaption>
           </figure>
 
           <p>
@@ -1043,9 +1037,6 @@ export default function ProtocoloAntiCelulasZumbis() {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
               />
             </div>
-            <figcaption className="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-3 italic px-2 sm:px-0">
-              Progressão da deterioração óssea quando não tratada adequadamente. Ilustração: Pesquisa Científica
-            </figcaption>
           </figure>
 
           <p className="text-lg sm:text-xl mb-4 sm:mb-6 break-words">
