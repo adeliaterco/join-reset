@@ -113,9 +113,6 @@ export default function ProtocoloAntiCelulasZumbis() {
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
             />
           </div>
-          <figcaption className="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-3 italic px-2 sm:px-0">
-            Milhões de mulheres acima de 50 anos sofrem com perda óssea acelerada — mas nova descoberta pode reverter o processo. Foto: Divulgação
-          </figcaption>
         </figure>
 
         <div className="text-base sm:text-lg leading-relaxed text-gray-800 mb-6 sm:mb-8 break-words" style={{ fontFamily: 'Georgia, serif' }}>
@@ -435,9 +432,6 @@ export default function ProtocoloAntiCelulasZumbis() {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
               />
             </div>
-            <figcaption className="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-3 italic px-2 sm:px-0">
-              Estrutura óssea: a diferença entre ossos saudáveis e fracos. Foto: Divulgação
-            </figcaption>
           </figure>
 
           <p>
@@ -924,9 +918,6 @@ export default function ProtocoloAntiCelulasZumbis() {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
               />
             </div>
-            <figcaption className="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-3 italic px-2 sm:px-0">
-              Mulheres recuperando mobilidade e confiança através do protocolo. Foto: Divulgação
-            </figcaption>
           </figure>
 
           <div className="bg-blue-50 rounded-lg p-6 sm:p-8 my-8 sm:my-10">
@@ -1164,9 +1155,6 @@ export default function ProtocoloAntiCelulasZumbis() {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
               />
             </div>
-            <figcaption className="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-3 italic px-2 sm:px-0">
-              Proteção total com garantia incondicional de satisfação. Foto: Divulgação
-            </figcaption>
           </figure>
 
           <div className="bg-green-50 rounded-lg p-6 sm:p-8 my-8 sm:my-10">
@@ -1246,9 +1234,6 @@ export default function ProtocoloAntiCelulasZumbis() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
                 />
               </div>
-              <figcaption className="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-3 italic px-2 sm:px-0">
-                O momento certo para reconstruir sua saúde óssea é agora. Foto: Divulgação
-              </figcaption>
             </figure>
 
             {/* ============================================
